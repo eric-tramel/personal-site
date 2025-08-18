@@ -1,0 +1,100 @@
+.research-timeline
+    position: relative
+    padding: 20px 0
+    
+    &::before
+        content: ''
+        position: absolute
+        left: 30px
+        top: 0
+        bottom: 0
+        width: 3px
+        background: linear-gradient(to bottom, $nord8, $nord10)
+        
+    @media #{$below}
+        &::before
+            left: 20px
+
+.timeline-item
+    position: relative
+    margin-bottom: 40px
+    padding-left: 70px
+    
+    @media #{$below}
+        padding-left: 50px
+    
+    &::before
+        content: ''
+        position: absolute
+        left: 22px
+        top: 5px
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        background: $nord8
+        border: 3px solid $nord6
+        z-index: 1
+        
+        @media #{$below}
+            left: 12px
+    
+    &:last-child
+        margin-bottom: 0
+
+.timeline-year
+    font-family: $fontHeader
+    font-size: 1.1rem
+    font-weight: 700
+    color: $nord10
+    margin: 0 0 8px 0
+    
+.timeline-title
+    font-family: $fontHeader
+    font-size: 1.6rem
+    font-weight: 700
+    color: $alpha
+    margin: 0 0 10px 0
+    
+.timeline-description
+    color: $gama
+    font-size: 1rem
+    line-height: 1.6
+    margin: 0 0 15px 0
+    
+.timeline-topics
+    display: flex
+    flex-wrap: wrap
+    gap: 8px
+    margin-top: 10px
+    
+    .topic-tag
+        background: linear-gradient(135deg, $nord7, $nord8)
+        color: $nord0
+        padding: 4px 12px
+        border-radius: 20px
+        font-size: 0.85rem
+        font-weight: 500
+        font-family: $fontSans
+        
+        &:hover
+            background: linear-gradient(135deg, $nord8, $nord9)
+            transform: translateY(-1px)
+            transition: all 0.2s ease
+
+// Special styling for current/recent work
+.timeline-item.current
+    &::before
+        background: $nord14
+        box-shadow: 0 0 0 4px rgba($nord14, 0.2)
+        animation: pulse 2s infinite
+        
+    .timeline-title
+        color: $nord14
+        
+@keyframes pulse 
+    0%
+        box-shadow: 0 0 0 0 rgba($nord14, 0.7)
+    70%
+        box-shadow: 0 0 0 10px rgba($nord14, 0)
+    100%
+        box-shadow: 0 0 0 0 rgba($nord14, 0)

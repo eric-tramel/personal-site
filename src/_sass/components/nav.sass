@@ -3,55 +3,152 @@
     > .list
         list-style: none
         margin: 0
-        padding: 0 13px 0
+        padding: 0
+        display: flex
+        gap: 3rem
 
         > .item
             display: inline-block
 
         > .item > .link
             display: inline-block
-            font-weight: 700
-            font-size: 1.4rem
-            padding: 20px 10px
             text-decoration: none
             font-family: $fontHeader
+            letter-spacing: 0.05em
+            text-transform: uppercase
+            transition: all 0.3s ease
 
 .nav
-    position: absolute
-    right: 0
+    position: fixed
     top: 0
+    left: 0
+    right: 0
+    z-index: 100
+    padding: 2rem 0 1rem 0
+    background-color: $sitebackground
+    box-shadow: 0 4px 12px rgba(46, 52, 64, 0.15)
 
     > .list
+        width: calc(100% - 4rem)
+        margin: 0 2rem
+        justify-content: space-between
+        align-items: center
 
-        padding: 0 13px 0
-        background-color: $nord2
-        border-bottom-left-radius: 2px
+        @media #{$mobile}
+            width: calc(100% - 2rem)
+            margin: 0 1rem
 
-        > .item > .link
-            color: $nord4
-            font-size: 1.5rem
-            padding: 20px 10px
+        @media #{$tablet}
+            width: calc(100% - 3rem)
+            margin: 0 1.5rem
 
-            &:hover
-                color: $nord11
+        .nav-links
+            display: flex
+            gap: 3rem
+            list-style: none
+
+            > .item
+                display: inline-block
+
+            > .item > .link
+                color: $beta
+                font-size: 1.4rem
+                font-weight: 700
+                font-family: $fontHeader
+                letter-spacing: 0.05em
+                text-transform: uppercase
+                text-decoration: none
+                padding: 0.5rem 0
+                position: relative
+
+                &::after
+                    content: ''
+                    position: absolute
+                    bottom: -4px
+                    left: 0
+                    right: 0
+                    height: 2px
+                    background: $nord8
+                    transform: scaleX(0)
+                    transition: transform 0.3s ease
+
+                &:hover
+                    color: $nord0
+                    
+                    &::after
+                        transform: scaleX(1)
+
+        .nav-right
+            display: flex
+            align-items: center
+            gap: 1.5rem
+
+        .nav-social
+            display: flex
+            gap: 1.5rem
+            align-items: center
+
+            .link
+                display: flex
+                align-items: center
+                justify-content: center
+                height: 20px
+                width: 20px
+                position: relative
+
+                .icon
+                    transition: all 0.3s ease
+                    color: $beta
+                    fill: $beta
+                    width: 20px
+                    height: 20px
+
+                &:hover .icon
+                    color: $nord8
+                    fill: $nord8
+                    transform: translateY(-1px)
+
+        .nav-profile
+            .profile-link
+                display: block
+
+            .profile-icon
+                width: 40px
+                height: 40px
+                border-radius: 4px
+                transition: transform 0.3s ease
+
+                &:hover
+                    transform: scale(1.1)
 
 .nav-home
-    margin-top: 40px
+    margin-top: 2rem
     text-align: center
 
     > .list
-        padding: 0
+        padding: 2rem 0
+        justify-content: center
 
-        > .item 
-            display: inline-block
+        > .item > .link
+            color: $nord1
+            font-size: 1.6rem
+            font-weight: 700
+            padding: 0
+            position: relative
 
-            > .link
-                font-size: 2rem
-                padding: 7px 15px
-                margin: 0
-                border-radius: 4%
-                transition: all .4s ease-in-out
-                width: auto
+            &::after
+                content: ''
+                position: absolute
+                bottom: -4px
+                left: 0
+                right: 0
+                height: 2px
+                background: $nord8
+                transform: scaleX(0)
+                transition: transform 0.3s ease
 
-                &:hover
-                    color: $nord12
+            &:hover
+                color: $nord0
+                
+                &::after
+                    transform: scaleX(1)
