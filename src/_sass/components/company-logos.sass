@@ -1,0 +1,64 @@
+// Company Logos Footer
+.company-logos
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: flex-start
+    gap: 2.5rem
+    margin: 3rem 0 2rem 0
+    padding: 2rem 1rem
+
+    @media #{$mobile}
+        gap: 1.5rem
+        margin: 2rem 0 1rem 0
+        padding: 1.5rem 1rem
+
+.company-logo
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    width: 120px
+    min-height: 80px
+
+    @media #{$mobile}
+        width: 100px
+        min-height: 70px
+
+    .logo-text
+        font-family: $fontHeader
+        font-weight: 700
+        font-size: 1.2rem
+        color: $alpha
+        text-align: center
+        letter-spacing: 0.5px
+        text-transform: uppercase
+        margin-bottom: 0.5rem
+
+        @media #{$mobile}
+            font-size: 1rem
+
+    .job-title
+        font-family: $fontHeader
+        font-weight: 400
+        font-size: 0.9rem
+        color: $gama
+        text-align: center
+        letter-spacing: 0.3px
+        line-height: 1.2
+        text-transform: uppercase
+
+        @media #{$mobile}
+            font-size: 0.8rem
+
+    // Special styling for certain companies
+    &[data-company="NVIDIA"]
+        border: 2px solid $delta
+        border-radius: 12px
+        padding: 1rem
+        background: rgba($delta, 0.05)
+        margin-top: -1rem
+        
+        .logo-text
+            color: $alpha
+            font-weight: 800
