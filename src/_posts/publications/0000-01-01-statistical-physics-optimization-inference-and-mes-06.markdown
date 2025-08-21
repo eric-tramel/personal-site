@@ -1,0 +1,15 @@
+---
+title: "Statistical Physics, Optimization, Inference, and Message-Passing Algorithms: Lecture Notes of the Les Houches School of Physics: Special Issue, October 2013"
+layout: publication
+category: publication
+pubtype: article
+date: 2016-01-01
+tag:
+    - publication
+authors: "Florent Krzakala & Federico Ricci-Tersenghi & Lenka Zdeborová & Riccardo Zecchina & Eric W Tramel & Leticia F Cugliandolo"
+in: "Oxford University Press"
+year: 2016
+link: "https://books.google.com/books?hl=en&lr=&id=scUBCwAAQBAJ&oi=fnd&pg=PP1&dq=info:CD1OcdRnqmwJ:scholar.google.com&ots=iTJZkjHUE4&sig=U3rsMFg-rSSbOM7WL8SelRwSoAA"
+abstract: >
+    In the last decade, there have been an increasing convergence of interest and methods between theoretical physics and fields as diverse as probability, machine learning, optimization and compressed sensing. In particular, many theoretical and applied works in statistical physics and computer science have relied on the use of message passing algorithms and their connection to statistical physics of spin glasses. The aim of this book, especially adapted to PhD students, post-docs, and young researchers, is to present the background necessary for entering this fast developing field.
+---

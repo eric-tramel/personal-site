@@ -11,13 +11,14 @@ tag:
     - boltzmann machines
     - machine learning
 authors: M. Gabrié, E. W. Tramel, & F. Krzakala
-in: Neural and Information Processing Symposium (NIPS)
+in: Neural Information Processing Systems (NeurIPS)
 year: 2015
+citations: 72
 image: /assets/images/gtk2015.png
 imageCaption: >-
     Estimates of the per-sample log-likelihood over the MNIST test set, normalized by the total number of units, as a function of the number of training epochs. The results for the different training algorithms are plotted in different colors with the same color code used for both panels. <b>Left panel:</b> Pseudo log-likelihood estimate. The difference between EMF algorithms and contrastive divergence algorithms is minimal. <b>Right panel:</b> EMF log-likelihood estimate at 2nd order. The improvement from MF to TAP is clear. Perhaps reasonably, TAP demonstrates an advantage over CD and PCD. Notice how the second-order EMF approximation of L provides less noisy estimates, at a lower computational cost.
-link: http://papers.nips.cc/paper/5788-training-restricted-boltzmann-machine-via-the-thouless-anderson-palmer-free-energy
-linkpdf: http://papers.nips.cc/paper/5788-training-restricted-boltzmann-machine-via-the-thouless-anderson-palmer-free-energy.pdf
+link: "https://proceedings.neurips.cc/paper/2015/hash/13f3cf8c531952d72e5847c4183e6910-Abstract.html"
+linkpdf: "https://proceedings.neurips.cc/paper/2015/file/13f3cf8c531952d72e5847c4183e6910-Paper.pdf"
 linkcode: http://github.com/sphinxteam/Boltzmann.jl
 linkposter: /assets/doc/gtk2015-poster.pdf
 abstract: >-
@@ -26,7 +27,7 @@ bibtex: >-
     conference{GTZ2015,
         Address = {Montreal, Canada},
         Author = {Marylou Gabri{\'e} and Eric W. Tramel and Florent Krzakala},
-        Booktitle = {Proc. Conf. on Neural Info. Processing Sys. (NIPS)},
+        Booktitle = {Proc. Conf. on Neural Info. Processing Sys. (NeurIPS)},
         Month = {June},
         Title = {Training Restricted {B}oltzmann Machines via the {Thouless-Andreson-Palmer} Free Energy},
         Year = {2015}}

@@ -1,0 +1,457 @@
+{
+  "author": "Eric W. Tramel",
+  "publications": [
+    {
+      "title": "Compressed-Sensing Recovery of Images and Video Using Multihypothesis Predictions",
+      "authors": "Chen Chen and Eric W Tramel and James E Fowler",
+      "venue": "Asilomar Conference on Signals, Systems, and Computers",
+      "year": 2011,
+      "citation_count": 315,
+      "url": "https://ieeexplore.ieee.org/abstract/document/6190204/",
+      "abstract": "Compressed-sensing reconstruction of still images and video sequences driven by multihypothesis predictions is considered. Specifically, for still images, multiple predictions drawn for an image block are made from spatially surrounding blocks within an initial non-predicted reconstruction. For video, multihypothesis predictions of the current frame are generated from one or more previously reconstructed reference frames. In each case, the predictions are used to generate a residual in the domain of the compressed-sensing random projections. This residual being typically more compressible than the original signal leads to improved reconstruction quality. To appropriately weight the hypothesis predictions, a Tikhonov regularization to an ill-posed least-squares optimization is proposed. Experimental results demonstrate that the proposed reconstructions outperform alternative strategies not employing \u2026",
+      "scholar_id": "jre2iwMAAAAJ:2osOgNQ5qMEC"
+    },
+    {
+      "title": "Block-Based Compressed Sensing of Images and Video",
+      "authors": "James E Fowler and Sungkwang Mun and Eric W Tramel",
+      "venue": "Foundations and Trends in Signal Processing",
+      "year": 2012,
+      "citation_count": 280,
+      "url": "https://www.nowpublishers.com/article/Details/SIG-033",
+      "abstract": "A number of techniques for the compressed sensing of imagery are surveyed. Various imaging media are considered, including still images, motion video, as well as multiview image sets and multiview video. A particular emphasis is placed on block-based compressed sensing due to its advantages in terms of both lightweight reconstruction complexity as well as a reduced memory burden for the random-projection measurement operator. For multiple-image scenarios, including video and multiview imagery, motion and disparity compensation is employed to exploit frame-to-frame redundancies due to object motion and parallax, resulting in residual frames which are more compressible and thus more easily reconstructed from compressed-sensing measurements. Extensive experimental comparisons evaluate various prominent reconstruction algorithms for still-image, motion-video, and multiview scenarios in terms of both reconstruction quality as well as computational complexity.",
+      "scholar_id": "jre2iwMAAAAJ:qjMakFHDy7sC"
+    },
+    {
+      "title": "Nearest regularized subspace for hyperspectral classification",
+      "authors": "Wei Li and Eric W Tramel and Saurabh Prasad and James E Fowler",
+      "venue": "IEEE Transactions on Geoscience and Remote Sensing",
+      "year": 2013,
+      "citation_count": 256,
+      "url": "https://ieeexplore.ieee.org/abstract/document/6472065/",
+      "abstract": "A classifier that couples nearest-subspace classification with a distance-weighted Tikhonov regularization is proposed for hyperspectral imagery. The resulting nearest-regularized-subspace classifier seeks an approximation of each testing sample via a linear combination of training samples within each class. The class label is then derived according to the class which best approximates the test sample. The distance-weighted Tikhonov regularization is then modified by measuring distance within a locality-preserving lower-dimensional subspace. Furthermore, a competitive process among the classes is proposed to simplify parameter tuning. Classification results for several hyperspectral image data sets demonstrate superior performance of the proposed approach when compared to other, more traditional classification techniques.",
+      "scholar_id": "jre2iwMAAAAJ:Tyk-4Ss8FVUC"
+    },
+    {
+      "title": "Multiscale Block Compressed Sensing with Smoothed Projected Landweber Reconstruction",
+      "authors": "James E Fowler and Sungkwang Mun and Eric W Tramel",
+      "venue": "European Signal Processing Conference (EUSIPCO)",
+      "year": 2011,
+      "citation_count": 214,
+      "url": "https://ieeexplore.ieee.org/abstract/document/7073994/",
+      "abstract": "A multiscale variant of the block compressed sensing with smoothed projected Landweber reconstruction algorithm is proposed for the compressed sensing of images. In essence, block-based compressed-sensing sampling is deployed independently within each subband of each decomposition level of a wavelet transform of an image. The corresponding multiscale reconstruction interleaves Landweber steps on the individual blocks with a smoothing filter in the spatial domain of the image as well as thresholding within a sparsity transform. Experimental results reveal that the proposed multiscale reconstruction preserves the fast computation associated with block-based compressed sensing while rivaling the reconstruction quality of a popular total-variation algorithm known for both its high-quality reconstruction as well as its exceedingly large computational cost.",
+      "scholar_id": "jre2iwMAAAAJ:d1gkVwhDpl0C"
+    },
+    {
+      "title": "Federated learning for predicting histological response to neoadjuvant chemotherapy in triple-negative breast cancer",
+      "authors": "Jean Ogier du Terrail and Armand Leopold and Cl\u00e9ment Joly and Constance B\u00e9guier and Mathieu Andreux and Charles Maussion and Beno\u00eet Schmauch and Eric W Tramel and Etienne Bendjebbar and Mikhail Zaslavskiy and Gilles Wainrib and Maud Milder and Julie Gervasoni and Julien Guerin and Thierry Durand and Alain Livartowski and Kelvin Moutet and Cl\u00e9ment Gautier and Inal Djafar and Anne-Laure Moisson and Camille Marini and Mathieu Galtier and F\u00e9lix Balazard and R\u00e9my Dubois and Jeverson Moreira and Antoine Simon and Damien Drubay and Magali Lacroix-Triki and Camille Franchet and Guillaume Bataillon and Pierre-Etienne Heudel",
+      "venue": "Nature medicine",
+      "year": 2023,
+      "citation_count": 185,
+      "url": "https://www.nature.com/articles/s41591-022-02155-w",
+      "abstract": "Triple-negative breast cancer (TNBC) is a rare cancer, characterized by high metastatic potential and poor prognosis, and has limited treatment options. The current standard of care in nonmetastatic settings is neoadjuvant chemotherapy (NACT), but treatment efficacy varies substantially across patients. This heterogeneity is still poorly understood, partly due to the paucity of curated TNBC data. Here we investigate the use of machine learning (ML) leveraging whole-slide images and clinical information to predict, at diagnosis, the histological response to NACT for early TNBC women patients. To overcome the biases of small-scale studies while respecting data privacy, we conducted a multicentric TNBC study using federated learning, in which patient data remain secured behind hospitals\u2019 firewalls. We show that local ML models relying on whole-slide images can predict response to NACT but that collaborative \u2026",
+      "scholar_id": "jre2iwMAAAAJ:gKiMpY-AVTkC"
+    },
+    {
+      "title": "Siloed federated learning for multi-centric histopathology datasets",
+      "authors": "Mathieu Andreux and Jean Ogier Du Terrail and Constance Beguier and Eric W Tramel",
+      "venue": "Springer International Publishing",
+      "year": 2020,
+      "citation_count": 153,
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-60548-3_13",
+      "abstract": "While federated learning is a promising approach for training deep learning models over distributed sensitive datasets, it presents new challenges for machine learning, especially when applied in the medical domain where multi-centric data heterogeneity is common. Building on previous domain adaptation works, this paper proposes a novel federated learning approach for deep learning architectures via the introduction of local-statistic batch normalization (BN) layers, resulting in collaboratively-trained, yet center-specific models. This strategy improves robustness to data heterogeneity while also reducing the potential for information leaks by not sharing the center-specific layer activation statistics. We benchmark the proposed method on the classification of tumorous histopathology image patches extracted from the Camelyon16 and Camelyon17 datasets. We show that our approach compares favorably to \u2026",
+      "scholar_id": "jre2iwMAAAAJ:hCrLmN-GePgC"
+    },
+    {
+      "title": "Classification and disease localization in histopathology using only global labels: A weakly-supervised approach",
+      "authors": "Pierre Courtiol and Eric W Tramel and Marc Sanselme and Gilles Wainrib",
+      "venue": "arXiv preprint arXiv:1802.02212",
+      "year": 2018,
+      "citation_count": 145,
+      "url": "https://arxiv.org/abs/1802.02212",
+      "abstract": "Analysis of histopathology slides is a critical step for many diagnoses, and in particular in oncology where it defines the gold standard. In the case of digital histopathological analysis, highly trained pathologists must review vast whole-slide-images of extreme digital resolution ( pixels) across multiple zoom levels in order to locate abnormal regions of cells, or in some cases single cells, out of millions. The application of deep learning to this problem is hampered not only by small sample sizes, as typical datasets contain only a few hundred samples, but also by the generation of ground-truth localized annotations for training interpretable classification and segmentation models. We propose a method for disease localization in the context of weakly supervised learning, where only image-level labels are available during training. Even without pixel-level annotations, we are able to demonstrate performance comparable with models trained with strong annotations on the Camelyon-16 lymph node metastases detection challenge. We accomplish this through the use of pre-trained deep convolutional networks, feature embedding, as well as learning via top instances and negative evidence, a multiple instance learning technique from the field of semantic segmentation and object detection.",
+      "scholar_id": "jre2iwMAAAAJ:-FonjvnnhkoC"
+    },
+    {
+      "title": "Video Compressed Sensing with Multihypothesis",
+      "authors": "Eric W Tramel and James E Fowler",
+      "venue": "Data Compression Conference (DCC), 2011",
+      "year": 2011,
+      "citation_count": 140,
+      "url": "https://ieeexplore.ieee.org/abstract/document/5749477/",
+      "abstract": "The compressed-sensing recovery of video sequences driven by multihypothesis predictions is considered. Specifically, multihypothesis predictions of the current frame are used to generate a residual in the domain of the compressed-sensing random projections. This residual being typically more compressible than the original frame leads to improved reconstruction quality. To appropriately weight the hypothesis predictions, a Tikhonov regularization to an ill-posed least-squares optimization is proposed. This method is shown to outperform both recovery of the frame independently of the others as well as recovery based on single-hypothesis prediction.",
+      "scholar_id": "jre2iwMAAAAJ:9yKSN-GCB0IC"
+    },
+    {
+      "title": "Spectral\u2013spatial preprocessing using multihypothesis prediction for noise-robust hyperspectral image classification",
+      "authors": "Chen Chen and Wei Li and Eric W Tramel and Minshan Cui and Saurabh Prasad and James E Fowler",
+      "venue": "IEEE journal of selected topics in applied earth observations and remote sensing",
+      "year": 2014,
+      "citation_count": 93,
+      "url": "https://ieeexplore.ieee.org/abstract/document/6705590/",
+      "abstract": "Spectral\u2013spatial preprocessing using multihypothesis prediction is proposed for improving accuracy of hyperspectral image classification. Specifically, multiple spatially collocated pixel vectors are used as a hypothesis set from which a prediction for each pixel vector of interest is generated. Additionally, a spectral-band-partitioning strategy based on inter-band correlation coefficients is proposed to improve the representational power of the hypothesis set. To calculate an optimal linear combination of the hypothesis predictions, a distance-weighted Tikhonov regularization to an ill-posed least-squares optimization is used. The resulting predictions effectively integrate spectral and spatial information and thus are used during classification in lieu of the original pixel vectors. This processed hyperspectral image dataset has less intraclass variability and more spatial regularity as compared to the original dataset \u2026",
+      "scholar_id": "jre2iwMAAAAJ:BwyfMAYsbu0C"
+    },
+    {
+      "title": "Federated learning challenges and opportunities: An outlook",
+      "authors": "Jie Ding and Eric Tramel and Anit Kumar Sahu and Shuang Wu and Salman Avestimehr and Tao Zhang",
+      "venue": "IEEE",
+      "year": 2022,
+      "citation_count": 91,
+      "url": "https://ieeexplore.ieee.org/abstract/document/9746925/",
+      "abstract": "Federated learning (FL) has been developed as a promising framework to leverage the resources of edge devices, enhance customers\u2019 privacy, comply with regulations, and reduce development costs. Although many methods and applications have been developed for FL, several critical challenges for practical FL systems remain unaddressed. This paper provides an outlook on FL development as part of the ICASSP 2022 special session entitled \"Frontiers of Federated Learning: Applications, Challenges, and Opportunities.\" The outlook is categorized into five emerging directions of FL, namely algorithm foundation, personalization, hardware and security constraints, lifelong learning, and nonstandard data. Our unique perspectives are backed by practical observations from large-scale federated systems for edge devices.",
+      "scholar_id": "jre2iwMAAAAJ:a3BOlSfXSfwC"
+    },
+    {
+      "title": "Swept Approximate Message Passing for Sparse Estimation",
+      "authors": "Andre Manoel and Florent Krzakala and Eric W. Tramel and Lenka Zdeborova",
+      "venue": "Proceedings of The 32nd International Conference on Machine Learning",
+      "year": 2015,
+      "citation_count": 89,
+      "url": "https://proceedings.mlr.press/v37/manoel15.html",
+      "abstract": "Approximate Message Passing (AMP) has been shown to be a superior method for inference problems, such as the recovery of signals from sets of noisy, lower-dimensionality measurements, both in terms of reconstruction accuracy and in computational efficiency. However, AMP suffers from serious convergence issues in contexts that do not exactly match its assumptions. We propose a new approach to stabilizing AMP in these contexts by applying AMP updates to individual coefficients rather than in parallel. Our results show that this change to the AMP iteration can provide theoretically expected, but hitherto unobtainable, performance for problems on which the standard AMP iteration diverges. Additionally, we find that the computational costs of this swept coefficient update scheme is not unduly burdensome, allowing it to be applied efficiently to signals of large dimensionality.",
+      "scholar_id": "jre2iwMAAAAJ:g3aElNc5_aQC"
+    },
+    {
+      "title": "Training Restricted Boltzmann Machine via the\ufffc Thouless-Anderson-Palmer free energy",
+      "authors": "Marylou Gabri\u00e9 and Eric W Tramel and Florent Krzakala",
+      "venue": "Advances in neural information processing systems",
+      "year": 2015,
+      "citation_count": 72,
+      "url": "https://proceedings.neurips.cc/paper/2015/hash/13f3cf8c531952d72e5847c4183e6910-Abstract.html",
+      "abstract": "Restricted Boltzmann machines are undirected neural networks which have been shown tobe effective in many applications, including serving as initializations fortraining deep multi-layer neural networks. One of the main reasons for their success is theexistence of efficient and practical stochastic algorithms, such as contrastive divergence, for unsupervised training. We propose an alternative deterministic iterative procedure based on an improved mean field method from statistical physics known as the Thouless-Anderson-Palmer approach. We demonstrate that our algorithm provides performance equal to, and sometimes superior to, persistent contrastive divergence, while also providing a clear and easy to evaluate objective function. We believe that this strategycan be easily generalized to other models as well as to more accurate higher-order approximations, paving the way for systematic improvements in training Boltzmann machineswith hidden units.",
+      "scholar_id": "jre2iwMAAAAJ:KUbvn5osdkgC"
+    },
+    {
+      "title": "Variational free energies for compressed sensing",
+      "authors": "Florent Krzakala and Andre Manoel and Eric W Tramel and Lenka Zdeborov\u00e1",
+      "venue": "2014 IEEE International Symposium on Information Theory",
+      "year": 2014,
+      "citation_count": 69,
+      "url": "https://ieeexplore.ieee.org/abstract/document/6875083/",
+      "abstract": "We consider a variational free energy approach for compressed sensing. We first show that the na\u00efve mean field approach performs remarkably well when coupled with a noise learning procedure. We also notice that it leads to the same equations as those used for iterative thresholding.We then discuss the Bethe free energy and how it corresponds to the fixed points of the approximate message passing algorithm. In both cases, we test numerically the direct optimization of the free energies as a converging sparse-estimation algorithm. We further derive the Bethe free energy in the context of generalized approximate message passing.",
+      "scholar_id": "jre2iwMAAAAJ:p__nRnzSRKYC"
+    },
+    {
+      "title": "Reconstruction of hyperspectral imagery from random projections using multihypothesis prediction",
+      "authors": "Chen Chen and Wei Li and Eric W Tramel and James E Fowler",
+      "venue": "IEEE Transactions on Geoscience and Remote Sensing",
+      "year": 2013,
+      "citation_count": 68,
+      "url": "https://ieeexplore.ieee.org/abstract/document/6471204/",
+      "abstract": "Reconstruction of hyperspectral imagery from spectral random projections is considered. Specifically, multiple predictions drawn for a pixel vector of interest are made from spatially neighboring pixel vectors within an initial non-predicted reconstruction. A two-phase hypothesis-generation procedure based on partitioning and merging of spectral bands according to the correlation coefficients between bands is proposed to fine-tune the hypotheses. The resulting prediction is used to generate a residual in the projection domain. This residual being typically more compressible than the original pixel vector leads to improved reconstruction quality. To appropriately weight the hypothesis predictions, a distance-weighted Tikhonov regularization to an ill-posed least-squares optimization is proposed. Experimental results demonstrate that the proposed reconstruction significantly outperforms alternative strategies not \u2026",
+      "scholar_id": "jre2iwMAAAAJ:zYLM7Y9cAGgC"
+    },
+    {
+      "title": "Statistical Physics, Optimization, Inference, and Message-Passing Algorithms: Lecture Notes of the Les Houches School of Physics: Special Issue, October 2013",
+      "authors": "Florent Krzakala and Federico Ricci-Tersenghi and Lenka Zdeborov\u00e1 and Riccardo Zecchina and Eric W Tramel and Leticia F Cugliandolo",
+      "venue": "Oxford University Press",
+      "year": 2016,
+      "citation_count": 46,
+      "url": "https://books.google.com/books?hl=en&lr=&id=scUBCwAAQBAJ&oi=fnd&pg=PP1&dq=info:CD1OcdRnqmwJ:scholar.google.com&ots=iTJZkjITI2&sig=IT2XbuaCPcqsV81WYVIo50gmpRo",
+      "abstract": "In the last decade, there have been an increasing convergence of interest and methods between theoretical physics and fields as diverse as probability, machine learning, optimization and compressed sensing. In particular, many theoretical and applied works in statistical physics and computer science have relied on the use of message passing algorithms and their connection to statistical physics of spin glasses. The aim of this book, especially adapted to PhD students, post-docs, and young researchers, is to present the background necessary for entering this fast developing field.",
+      "scholar_id": "jre2iwMAAAAJ:kuK5TVdYjLIC"
+    },
+    {
+      "title": "Deterministic and generalized framework for unsupervised learning with restricted boltzmann machines",
+      "authors": "Eric W Tramel and Marylou Gabri\u00e9 and Andre Manoel and Francesco Caltagirone and Florent Krzakala",
+      "venue": "Physical Review X",
+      "year": 2018,
+      "citation_count": 43,
+      "url": "https://journals.aps.org/prx/abstract/10.1103/PhysRevX.8.041006",
+      "abstract": "Restricted Boltzmann machines (RBMs) are energy-based neural networks which are commonly used as the building blocks for deep-architecture neural architectures. In this work, we derive a deterministic framework for the training, evaluation, and use of RBMs based upon the Thouless-Anderson-Palmer (TAP) mean-field approximation of widely connected systems with weak interactions coming from spin-glass theory. While the TAP approach has been extensively studied for fully visible binary spin systems, our construction is generalized to latent-variable models, as well as to arbitrarily distributed real-valued spin systems with bounded support. In our numerical experiments, we demonstrate the effective deterministic training of our proposed models and are able to show interesting features of unsupervised learning which could not be directly observed with sampling. Additionally, we demonstrate how to utilize \u2026",
+      "scholar_id": "jre2iwMAAAAJ:k8Z6L05lTy4C"
+    },
+    {
+      "title": "Intensity-only optical compressive imaging using a multiply scattering material and a double phase retrieval approach",
+      "authors": "Boshra Rajaei and Eric W Tramel and Sylvain Gigan and Florent Krzakala and Laurent Daudet",
+      "venue": "2016 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+      "year": 2016,
+      "citation_count": 38,
+      "url": "https://ieeexplore.ieee.org/abstract/document/7472439/",
+      "abstract": "In this paper, the problem of compressive imaging is addressed using natural randomization by means of a multiply scattering medium. To utilize the medium in this way, its corresponding transmission matrix must be estimated. For calibration purposes, we use a digital micromirror device (DMD) as a simple, cheap, and high-resolution binary intensity modulator. We propose a phase retrieval algorithm which is well adapted to intensity-only measurements on the camera, and to the input binary intensity patterns, both to estimate the complex transmission matrix as well as image reconstruction. We demonstrate promising experimental results for the proposed double phase retrieval algorithm using the MNIST dataset of handwritten digits as example images.",
+      "scholar_id": "jre2iwMAAAAJ:tYavs44e6CUC"
+    },
+    {
+      "title": "Compressed-sensing recovery of multiview image and video sequences using signal prediction",
+      "authors": "Beatrice Pesquet Maria Trocan and Eric W. Tramel and James E. Fowler",
+      "venue": "Multimedia Tools and Applications",
+      "year": 2013,
+      "citation_count": 38,
+      "url": "",
+      "abstract": "",
+      "scholar_id": "jre2iwMAAAAJ:IjCSPb-OGe4C"
+    },
+    {
+      "title": "Approximate message passing with restricted Boltzmann machine priors",
+      "authors": "Eric W Tramel and Ang\u00e9lique Dr\u00e9meau and Florent Krzakala",
+      "venue": "Journal of Statistical Mechanics: Theory and Experiment",
+      "year": 2016,
+      "citation_count": 37,
+      "url": "https://iopscience.iop.org/article/10.1088/1742-5468/2016/07/073401/meta",
+      "abstract": "Approximate message passing (AMP) has been shown to be an excellent statistical approach to signal inference and compressed sensing problems. The AMP framework provides modularity in the choice of signal prior; here we propose a hierarchical form of the Gauss\u2013Bernoulli prior which utilizes a restricted Boltzmann machine (RBM) trained on the signal support to push reconstruction performance beyond that of simple iid priors for signals whose support can be well represented by a trained binary RBM. We present and analyze two methods of RBM factorization and demonstrate how these affect signal reconstruction performance within our proposed algorithm. Finally, using the MNIST handwritten digit dataset, we show experimentally that using an RBM allows AMP to approach oracle-support performance.",
+      "scholar_id": "jre2iwMAAAAJ:ILKRHgRFtOwC"
+    },
+    {
+      "title": "Efficient sparse secure aggregation for federated learning",
+      "authors": "Constance Beguier and Mathieu Andreux and Eric W Tramel",
+      "venue": "arXiv preprint arXiv:2007.14861",
+      "year": 2020,
+      "citation_count": 35,
+      "url": "https://arxiv.org/abs/2007.14861",
+      "abstract": "Federated Learning enables one to jointly train a machine learning model across distributed clients holding sensitive datasets. In real-world settings, this approach is hindered by expensive communication and privacy concerns. Both of these challenges have already been addressed individually, resulting in competing optimisations. In this article, we tackle them simultaneously for one of the first times. More precisely, we adapt compression-based federated techniques to additive secret sharing, leading to an efficient secure aggregation protocol, with an adaptable security level. We prove its privacy against malicious adversaries and its correctness in the semi-honest setting. Experiments on deep convolutional networks demonstrate that our secure protocol achieves high accuracy with low communication costs. Compared to prior works on secure aggregation, our protocol has a lower communication and computation costs for a similar accuracy.",
+      "scholar_id": "jre2iwMAAAAJ:LhH-TYMQEocC"
+    },
+    {
+      "title": "Self-aware personalized federated learning",
+      "authors": "Huili Chen and Jie Ding and Eric W Tramel and Shuang Wu and Anit Kumar Sahu and Salman Avestimehr and Tao Zhang",
+      "venue": "Advances in Neural Information Processing Systems",
+      "year": 2022,
+      "citation_count": 34,
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/8265d7bb2db42e86637001db2c46619f-Abstract-Conference.html",
+      "abstract": "In the context of personalized federated learning (FL), the critical challenge is to balance local model improvement and global model tuning when the personal and global objectives may not be exactly aligned. Inspired by Bayesian hierarchical models, we develop a self-aware personalized FL method where each client can automatically balance the training of its local personal model and the global model that implicitly contributes to other clients' training. Such a balance is derived from the inter-client and intra-client uncertainty quantification. A larger inter-client variation implies more personalization is needed. Correspondingly, our method uses uncertainty-driven local training steps an aggregation rule instead of conventional local fine-tuning and sample size-based aggregation. With experimental studies on synthetic data, Amazon Alexa audio data, and public datasets such as MNIST, FEMNIST, CIFAR10, and Sent140, we show that our proposed method can achieve significantly improved personalization performance compared with the existing counterparts.",
+      "scholar_id": "jre2iwMAAAAJ:nZcligLrVowC"
+    },
+    {
+      "title": "Advances in Neural Information Processing Systems",
+      "authors": "M Gabri\u00e9 and EW Tramel and F Krzakala",
+      "venue": "Curran Associates",
+      "year": 2015,
+      "citation_count": 34,
+      "url": "https://scholar.google.com/scholar?cluster=3631180727967404300&hl=en&oi=scholarr",
+      "abstract": "",
+      "scholar_id": "jre2iwMAAAAJ:buQ7SEKw-1sC"
+    },
+    {
+      "title": "Compressed sensing of multiview images using disparity compensation",
+      "authors": "Maria Trocan and Thomas Maugey and Eric W Tramel and James E Fowler and B\u00e9atrice Pesquet-Popescu",
+      "venue": "Image Processing (ICIP), 2010 17th IEEE International Conference on",
+      "year": 2010,
+      "citation_count": 34,
+      "url": "https://ieeexplore.ieee.org/abstract/document/5652767/",
+      "abstract": "Compressed sensing is applied to multiview image sets and inter-image disparity compensation is incorporated into image reconstruction in order to take advantage of the high degree of inter-image correlation common to multiview scenarios. Instead of recovering images in the set independently from one another, two neighboring images are used to calculate a prediction of a target image, and the difference between the original measurements and the compressed-sensing projection of the prediction is then reconstructed as a residual and added back to the prediction in an iterated fashion. The proposed method shows large gains in performance over straightforward, independent compressed-sensing recovery. Additionally, projection and recovery are block-based to significantly reduce computation time.",
+      "scholar_id": "jre2iwMAAAAJ:u5HHmVD_uO8C"
+    },
+    {
+      "title": "Efficient per-example gradient computations in convolutional neural networks",
+      "authors": "Gaspar Rochette and Andre Manoel and Eric W Tramel",
+      "venue": "arXiv preprint arXiv:1912.06015",
+      "year": 2019,
+      "citation_count": 30,
+      "url": "https://arxiv.org/abs/1912.06015",
+      "abstract": "Deep learning frameworks leverage GPUs to perform massively-parallel computations over batches of many training examples efficiently. However, for certain tasks, one may be interested in performing per-example computations, for instance using per-example gradients to evaluate a quantity of interest unique to each example. One notable application comes from the field of differential privacy, where per-example gradients must be norm-bounded in order to limit the impact of each example on the aggregated batch gradient. In this work, we discuss how per-example gradients can be efficiently computed in convolutional neural networks (CNNs). We compare existing strategies by performing a few steps of differentially-private training on CNNs of varying sizes. We also introduce a new strategy for per-example gradient calculation, which is shown to be advantageous depending on the model architecture and how the model is trained. This is a first step in making differentially-private training of CNNs practical.",
+      "scholar_id": "jre2iwMAAAAJ:FPJr55Dyh1AC"
+    },
+    {
+      "title": "Differentially private federated learning for cancer prediction",
+      "authors": "Constance Beguier and Jean Ogier du Terrail and Iqraa Meah and Mathieu Andreux and Eric W Tramel",
+      "venue": "arXiv preprint arXiv:2101.02997",
+      "year": 2021,
+      "citation_count": 27,
+      "url": "https://arxiv.org/abs/2101.02997",
+      "abstract": "Since 2014, the NIH funded iDASH (integrating Data for Analysis, Anonymization, SHaring) National Center for Biomedical Computing has hosted yearly competitions on the topic of private computing for genomic data. For one track of the 2020 iteration of this competition, participants were challenged to produce an approach to federated learning (FL) training of genomic cancer prediction models using differential privacy (DP), with submissions ranked according to held-out test accuracy for a given set of DP budgets. More precisely, in this track, we are tasked with training a supervised model for the prediction of breast cancer occurrence from genomic data split between two virtual centers while ensuring data privacy with respect to model transfer via DP. In this article, we present our 3rd place submission to this competition. During the competition, we encountered two main challenges discussed in this article: i) ensuring correctness of the privacy budget evaluation and ii) achieving an acceptable trade-off between prediction performance and privacy budget.",
+      "scholar_id": "jre2iwMAAAAJ:86PQX7AUzd4C"
+    },
+    {
+      "title": "ToxicBlend: virtual screening of toxic compounds with ensemble predictors",
+      "authors": "Mikhail Zaslavskiy and Simon J\u00e9gou and Eric W Tramel and Gilles Wainrib",
+      "venue": "Computational Toxicology",
+      "year": 2019,
+      "citation_count": 27,
+      "url": "https://www.sciencedirect.com/science/article/pii/S2468111318300744",
+      "abstract": "Timely assessment of compound toxicity is one of the biggest challenges facing the pharmaceutical industry today. A significant proportion of compounds identified as potential leads are ultimately discarded due to the toxicity they induce. In this paper, we propose a novel machine learning approach for the prediction of molecular activity on ToxCast targets. We combine extreme gradient boosting with fully-connected and graph-convolutional neural network architectures trained on QSAR physical molecular property descriptors, PubChem molecular fingerprints, and SMILES sequences. Our ensemble predictor leverages the strengths of each individual technique, significantly outperforming existing state-of-the art models on the ToxCast and Tox21 toxicity related bioactivity-prediction datasets. We provide free access to molecule bioactivity prediction using our model at http://toxicblend.owkin.com.",
+      "scholar_id": "jre2iwMAAAAJ:Dip1O2bNi0gC"
+    },
+    {
+      "title": "Inferring sparsity: Compressed sensing using generalized restricted Boltzmann machines",
+      "authors": "Eric W Tramel and Andre Manoel and Francesco Caltagirone and Marylou Gabri\u00e9 and Florent Krzakala",
+      "venue": "2016 IEEE Information Theory Workshop (ITW)",
+      "year": 2016,
+      "citation_count": 25,
+      "url": "https://ieeexplore.ieee.org/abstract/document/7606837/",
+      "abstract": "In this work, we consider compressed sensing reconstruction from M measurements of K-sparse structured signals which do not possess a writable correlation model. Assuming that a generative statistical model, such as a Boltzmann machine, can be trained in an unsupervised manner on example signals, we demonstrate how this signal model can be used within a Bayesian framework of signal reconstruction. By deriving a message-passing inference for general distribution restricted Boltzmann machines, we are able to integrate these inferred signal models into approximate message passing for compressed sensing reconstruction. Finally, we show for the MNIST dataset that this approach can be very effective, even for M <; K.",
+      "scholar_id": "jre2iwMAAAAJ:tuHXwOkdijsC"
+    },
+    {
+      "title": "Increasing acceptance of AI\u2010generated digital twins through clinical trial applications",
+      "authors": "Anna A Vidovszky and Charles K Fisher and Anton D Loukianov and Aaron M Smith and Eric W Tramel and Jonathan R Walsh and Jessica L Ross",
+      "venue": "Clinical and Translational Science",
+      "year": 2024,
+      "citation_count": 20,
+      "url": "https://ascpt.onlinelibrary.wiley.com/doi/abs/10.1111/cts.13897",
+      "abstract": "Today's approach to medicine requires extensive trial and error to determine the proper treatment path for each patient. While many fields have benefited from technological breakthroughs in computer science, such as artificial intelligence (AI), the task of developing effective treatments is actually getting slower and more costly. With the increased availability of rich historical datasets from previous clinical trials and real\u2010world data sources, one can leverage AI models to create holistic forecasts of future health outcomes for an individual patient in the form of an AI\u2010generated digital twin. This could support the rapid evaluation of intervention strategies in silico and could eventually be implemented in clinical practice to make personalized medicine a reality. In this work, we focus on uses for AI\u2010generated digital twins of clinical trial participants and contend that the regulatory outlook for this technology within drug \u2026",
+      "scholar_id": "jre2iwMAAAAJ:jL-93Qbq4QoC"
+    },
+    {
+      "title": "Decision fusion for hyperspectral image classification based on minimum-distance classifiers in thewavelet domain",
+      "authors": "Wei Li and Saurabh Prasad and Eric W Tramel and James E Fowler and Qian Du",
+      "venue": "2014 IEEE China Summit & International Conference on Signal and Information Processing (ChinaSIP)",
+      "year": 2014,
+      "citation_count": 20,
+      "url": "https://ieeexplore.ieee.org/abstract/document/6889223/",
+      "abstract": "A decision-fusion approach is introduced for hyperspectral data classification based on minimum-distance classifiers in the wavelet domain. In the proposed approach, multi-scale features of each hyperspectral pixel are extracted by implementing a redundant discrete wavelet transformation on the spectral signature. Following this, a pair of minimumdistance classifiers\u2014a local mean-based nonparametric classifirer and a nearest regularization subspace\u2014are applied on wavelet coefficients at each scale. Classification results are finally merged in a multi-classifier decision-fusion system. Experimental results using real hyperspectral data demonstrate the benefits of the proposed approach\u2014in addition to improved classification performance compared to a traditional single classifier, the resulting classifier framework is effective even for low signal-to-noise-ratio images.",
+      "scholar_id": "jre2iwMAAAAJ:EYYDruWGBe4C"
+    },
+    {
+      "title": "Multistage compressed-sensing reconstruction of multiview images",
+      "authors": "Maria Trocan and Thomas Maugey and Eric W Tramel and James E Fowler and B\u00e9atrice Pesquet-Popescu",
+      "venue": "Multimedia Signal Processing (MMSP), 2010 IEEE International Workshop on",
+      "year": 2010,
+      "citation_count": 19,
+      "url": "https://ieeexplore.ieee.org/abstract/document/5662003/",
+      "abstract": "Compressed sensing is applied to multiview image sets and the high degree of correlation between views is exploited to enhance recovery performance over straightforward independent view recovery. This gain in performance is obtained by recovering the difference between a set of acquired measurements and the projection of a prediction of the signal they represent. The recovered difference is then added back to the prediction, and the prediction and recovery procedure is repeated in an iterated fashion for each of the views in the multiview image set. The recovered multiview image set is then used as an initialization to repeat the entire process again to form a multistage refinement. Experimental results reveal substantial performance gains from the multistage reconstruction.",
+      "scholar_id": "jre2iwMAAAAJ:u-x6o8ySG0sC"
+    },
+    {
+      "title": "ActPerFL: Active personalized federated learning",
+      "authors": "Huili Chen and Jie Ding and Eric Tramel and Shuang Wu and Anit Kumar Sahu and Salman Avestimehr and Tao Zhang",
+      "venue": "Unknown Venue",
+      "year": 2022,
+      "citation_count": 15,
+      "url": "https://www.amazon.science/publications/actperfl-active-personalized-federated-learning",
+      "abstract": "In the context of personalized federated learning (FL), the critical challenge is to balance local model improvement and global model tuning when the personal and global objectives may not be exactly aligned. Inspired by Bayesian hierarchical models, we develop Act-PerFL, a self-aware personalized FL method where each client can automatically balance the training of its local personal model and the global model that implicitly contributes to other clients\u2019 training. Such a balance is derived from the inter-client and intra-client uncertainty quantification. Consequently, Act-PerFL can adapt to the underlying clients\u2019 heterogeneity with uncertainty-driven local training and model aggregation. With experimental studies on Sent140 and Amazon Alexa audio data, we show that ActPerFL can achieve superior personalization performance compared with the existing counterparts.",
+      "scholar_id": "jre2iwMAAAAJ:OP4eGU-M3BUC"
+    },
+    {
+      "title": "Streaming Bayesian inference: theoretical limits and mini-batch approximate message-passing",
+      "authors": "Andre Manoel and Florent Krzakala and Eric W Tramel and Lenka Zdeborov\u00e1",
+      "venue": "2017 55th Annual Allerton Conference on Communication, Control, and Computing (Allerton)",
+      "year": 2017,
+      "citation_count": 14,
+      "url": "https://ieeexplore.ieee.org/abstract/document/8262853/",
+      "abstract": "In statistical learning for real-world large-scale data problems, one must often resort to \u201cstreaming\u201d algorithms which operate sequentially on small batches of data. In this work, we present an analysis of the information-theoretic limits of mini-batch inference in the context of generalized linear models and low-rank matrix factorization. In a controlled Bayes-optimal setting, we characterize the optimal performance and phase transitions as a function of mini-batch size. We base part of our results on a detailed analysis of a mini-batch version of the approximate message-passing algorithm (Mini-AMP), which we introduce. Additionally, we show that this theoretical optimality carries over into real-data problems by illustrating that Mini-AMP is competitive with standard streaming algorithms for clustering.",
+      "scholar_id": "jre2iwMAAAAJ:kz9GbA2Ns4gC"
+    },
+    {
+      "title": "Systems and methods for compressive light sensing using multiple spatial light modulators",
+      "authors": "Ankit Mohan and Siu-Kei Tin and Eric W Tramel",
+      "venue": "Unknown Venue",
+      "year": 2015,
+      "citation_count": 8,
+      "url": "https://patents.google.com/patent/US9160900B2/en",
+      "abstract": "In one embodiment, a method for capturing light field information including spatial and angular information using an image pickup device that includes an image sensor and at least one spatial light modulator (SLM) comprises taking multiple captures of a scene using at least one SLM to obtain coded projections of a light field of the scene, wherein each capture is taken using at least one pattern on the at least one SLM, and recovering light field data using a reconstruction process on the obtained coded projections of the light field. In one embodiment, a system for capturing images com prises one or more spatial light modulators, wherein each spatial light modulator is configurable into a respective pat tern, a first image sensor that includes one or more pixels, and one or more processors configured to cause the system to configure the one or more spatial light modulators into respective patterns, capture coded \u2026",
+      "scholar_id": "jre2iwMAAAAJ:W7OEmFMy1HYC"
+    },
+    {
+      "title": "Statistical estimation: From denoising to sparse regression and hidden cliques",
+      "authors": "Eric W Tramel and Santhosh Kumar and Andrei Giurgiu and Andrea Montanari",
+      "venue": "arXiv preprint arXiv:1409.5557",
+      "year": 2014,
+      "citation_count": 8,
+      "url": "https://arxiv.org/abs/1409.5557",
+      "abstract": "These notes review six lectures given by Prof. Andrea Montanari on the topic of statistical estimation for linear models. The first two lectures cover the principles of signal recovery from linear measurements in terms of minimax risk. Subsequent lectures demonstrate the application of these principles to several practical problems in science and engineering. Specifically, these topics include denoising of error-laden signals, recovery of compressively sensed signals, reconstruction of low-rank matrices, and also the discovery of hidden cliques within large networks.",
+      "scholar_id": "jre2iwMAAAAJ:L7CI7m0gUJcC"
+    },
+    {
+      "title": "Systems and methods for image classification",
+      "authors": "Pierre Courtiol and Eric W Tramel and Marc Sanselme and Gilles WAINRIB",
+      "venue": "Unknown Venue",
+      "year": 2022,
+      "citation_count": 5,
+      "url": "https://patents.google.com/patent/US11482022B2/en",
+      "abstract": "A method and apparatus of a device that classifies an image is described. In an exemplary embodiment, the method includes tiling at least one region of interest of the input image into a set of tiles. For each tile, the method includes extracting a feature vector of the tile by applying a convo lutional neural network, wherein a feature is a local descrip tor of the tile; and computing a score of the tile from the extracted feature vector, said tile score being representative of a contribution of the tile into a classification of the input image. The method also includes sorting a set of the tile scores and selecting a subset of the tile scores based on their value and/or their rank in the sorted set. The method also includes applying a classifier to the selected tile scores in order to classify the input image.",
+      "scholar_id": "jre2iwMAAAAJ:_5tno0g5mFcC"
+    },
+    {
+      "title": "Digital twin generators for disease modeling",
+      "authors": "Nameyeh Alam and Jake Basilico and Daniele Bertolini and Satish Casie Chetty and Heather D'Angelo and Ryan Douglas and Charles K Fisher and Franklin Fuller and Melissa Gomes and Rishabh Gupta and Alex Lang and Anton Loukianov and Rachel Mak-McCully and Cary Murray and Hanalei Pham and Susanna Qiao and Elena Ryapolova-Webb and Aaron Smith and Dimitri Theoharatos and Anil Tolwani and Eric W Tramel and Anna Vidovszky and Judy Viduya and Jonathan R Walsh",
+      "venue": "arXiv preprint arXiv:2405.01488",
+      "year": 2024,
+      "citation_count": 4,
+      "url": "https://arxiv.org/abs/2405.01488",
+      "abstract": "A patient's digital twin is a computational model that describes the evolution of their health over time. Digital twins have the potential to revolutionize medicine by enabling individual-level computer simulations of human health, which can be used to conduct more efficient clinical trials or to recommend personalized treatment options. Due to the overwhelming complexity of human biology, machine learning approaches that leverage large datasets of historical patients' longitudinal health records to generate patients' digital twins are more tractable than potential mechanistic models. In this manuscript, we describe a neural network architecture that can learn conditional generative models of clinical trajectories, which we call Digital Twin Generators (DTGs), that can create digital twins of individual patients. We show that the same neural network architecture can be trained to generate accurate digital twins for patients across 13 different indications simply by changing the training set and tuning hyperparameters. By introducing a general purpose architecture, we aim to unlock the ability to scale machine learning approaches to larger datasets and across more indications so that a digital twin could be created for any patient in the world.",
+      "scholar_id": "jre2iwMAAAAJ:4X0JR2_MtJMC"
+    },
+    {
+      "title": "Semi-supervised federated learning for keyword spotting",
+      "authors": "Enmao Diao and Eric W Tramel and Jie Ding and Tao Zhang",
+      "venue": "2023 IEEE International Conference on Multimedia and Expo Workshops (ICMEW)",
+      "year": 2023,
+      "citation_count": 4,
+      "url": "https://ieeexplore.ieee.org/abstract/document/10221901/",
+      "abstract": "Keyword Spotting (KWS) is a critical aspect of audio-based applications on mobile devices and virtual assistants. Recent developments in Federated Learning (FL) have significantly expanded the ability to train machine learning models by utilizing the computational and private data resources of numerous distributed devices. However, existing FL methods typically require that devices possess accurate ground-truth labels, which can be both expensive and impractical when dealing with local audio data. In this study, we first demonstrate the effectiveness of Semi-Supervised Federated Learning (SSL) and FL for KWS. We then extend our investigation to Semi-Supervised Federated Learning (SSFL) for KWS, where devices possess completely unlabeled data, while the server has access to a small amount of labeled data. We perform numerical analyses using state-of-the-art SSL, FL, and SSFL techniques to \u2026",
+      "scholar_id": "jre2iwMAAAAJ:BJbdYPG6LGMC"
+    },
+    {
+      "title": "Scampi: a robust approximate message-passing framework for compressive imaging",
+      "authors": "Jean Barbier and Eric W Tramel and Florent Krzakala",
+      "venue": "Journal of Physics: Conference Series",
+      "year": 2016,
+      "citation_count": 3,
+      "url": "https://iopscience.iop.org/article/10.1088/1742-6596/699/1/012013/meta",
+      "abstract": "Reconstruction of images from noisy linear measurements is a core problem in image processing, for which convex optimization methods based on total variation (TV) minimization have been the long-standing state-of-the-art. We present an alternative probabilistic reconstruction procedure based on approximate message-passing, Scampi, which operates in the compressive regime, where the inverse imaging problem is underdetermined. While the proposed method is related to the recently proposed GrAMPA algorithm of Borgerding, Schniter, and Rangan, we further develop the probabilistic approach to compressive imaging by introducing an expectation-maximization learning of model parameters, making the Scampi robust to model uncertainties. Additionally, our numerical experiments indicate that Scampi can provide reconstruction performance superior to both GrAMPA as well as convex approaches to TV \u2026",
+      "scholar_id": "jre2iwMAAAAJ:gsN89kCJA0AC"
+    },
+    {
+      "title": "Distance-weighted regularization for compressed-sensing video recovery and supervised hyperspectral classification",
+      "authors": "Eric W Tramel",
+      "venue": "Unknown Venue",
+      "year": 2012,
+      "citation_count": 3,
+      "url": "https://search.proquest.com/openview/c13ea2108d6cb7b540dbfd7809427798/1?pq-origsite=gscholar&cbl=18750",
+      "abstract": "The compressed sensing (CS) model of signal processing, while offering many unique advantages in terms of low-cost sensor design, poses interesting challenges for both signal acquisition and recovery, especially for signals of large size. In this work, we investigate how CS might be applied practically and efficiently in the context of natural video. We make use of a CS video acquisition approach in line with the popular single-pixel camera framework of blind, non-adaptive, random sampling while proposing new approaches for the subsequent recovery of the video signal which leverage inter-frame redundancy to minimize recovery error. We introduce a method of approximation, which we term multi-hypothesis (MH) frame prediction, to create accurate frame predictions by comparing hypotheses drawn from the spatial domain of chosen reference frames to the non-overlapping, block-by-block CS measurements of \u2026",
+      "scholar_id": "jre2iwMAAAAJ:UeHWp8X0CEIC"
+    },
+    {
+      "title": "Robust Detection of Covariate-Treatment Interactions in Clinical Trials",
+      "authors": "Baptiste Goujaud and Eric W. Tramel and Pierre Courtiol and Mikhail Zaslavskiy and Gilles Wainrib",
+      "venue": "arXiv preprint arXiv:1712.08211",
+      "year": 2017,
+      "citation_count": 1,
+      "url": "https://arxiv.org/abs/1712.08211",
+      "abstract": "Detection of interactions between treatment effects and patient descriptors in clinical trials is critical for optimizing the drug development process. The increasing volume of data accumulated in clinical trials provides a unique opportunity to discover new biomarkers and further the goal of personalized medicine, but it also requires innovative robust biomarker detection methods capable of detecting non-linear, and sometimes weak, signals. We propose a set of novel univariate statistical tests, based on the theory of random walks, which are able to capture non-linear and non-monotonic covariate-treatment interactions. We also propose a novel combined test, which leverages the power of all of our proposed univariate tests into a single general-case tool. We present results for both synthetic trials as well as real-world clinical trials, where we compare our method with state-of-the-art techniques and demonstrate the utility and robustness of our approach.",
+      "scholar_id": "jre2iwMAAAAJ:WZBGuue-350C"
+    },
+    {
+      "title": "Systems and methods for image classification",
+      "authors": "Pierre Courtiol and Eric W Tramel and Marc Sanselme and Gilles WAINRIB",
+      "venue": "Unknown Venue",
+      "year": 2024,
+      "citation_count": 0,
+      "url": "https://patents.google.com/patent/US20240346651A1/en",
+      "abstract": "A method and apparatus of a device that classifies an image is described. In an exemplary embodiment, the method includes tiling at least one region of interest of the input image into a set of tiles. For each tile, the method includes extracting a feature vector of the tile by applying a convolutional neural network, wherein a feature is a local descriptor of the tile; and computing a score of the tile from the extracted feature vector, said tile score being representative of a contribution of the tile into a classification of the input image. The method also includes sorting a set of the tile scores and selecting a subset of the tile scores based on their value and/or their rank in the sorted set. The method also includes applying a classifier to the selected tile scores in order to classify the input image.",
+      "scholar_id": "jre2iwMAAAAJ:wMgC3FpKEyYC"
+    },
+    {
+      "title": "Boosting Clinical Trial Power in Parkinson's disease (PD) with AI-Generated Digital Twins",
+      "authors": "C Murray and C Kusiak and A Vanderbeek and D Bertolini and E Tramel",
+      "venue": "MOVEMENT DISORDERS",
+      "year": 2024,
+      "citation_count": 0,
+      "url": "https://scholar.google.com/scholar?cluster=12239165064324228571&hl=en&oi=scholarr",
+      "abstract": "",
+      "scholar_id": "jre2iwMAAAAJ:48xauSegjOkC"
+    },
+    {
+      "title": "Systems and methods for administrating a federated learning network",
+      "authors": "Mathieu GALTIER and Mathieu ANDREUX and Camille MARINI and Eric TRAMEL and Inal DJAFAR and Jean DU TERRAIL",
+      "venue": "Unknown Venue",
+      "year": 2024,
+      "citation_count": 0,
+      "url": "https://patents.google.com/patent/US20240046147A1/en",
+      "abstract": "2023-07-03 Assigned to Owkin France SAS reassignment Owkin France SAS ASSIGNMENT OF ASSIGNORS INTEREST (SEE DOCUMENT FOR DETAILS). Assignors: DJAFAR, Inal, ANDREUX, Mathieu, TRAMEL, ERIC W., GALTIER, Mathieu, MARINI, Camille, TERRAIL, JEAN DU",
+      "scholar_id": "jre2iwMAAAAJ:AHdEip9mkN0C"
+    },
+    {
+      "title": "ToxicBlend: Virtual screening of toxic compound with ensemble predictors",
+      "authors": "M Zaslayskiy and S Jegou and EW Tramel and G Wainrib",
+      "venue": "TOXICOLOGY LETTERS",
+      "year": 2018,
+      "citation_count": 0,
+      "url": "https://scholar.google.com/scholar?cluster=784733391079322422&hl=en&oi=scholarr",
+      "abstract": "",
+      "scholar_id": "jre2iwMAAAAJ:lgwcVrK6X84C"
+    },
+    {
+      "title": "Proceedings of the third\" international Traveling Workshop on Interactions between Sparse models and Technology\"(iTWIST'16)",
+      "authors": "Vinayak Abrol and Olivier Absil and P-A Absil and Sandrine Anthoine and Philippe Antoine and Thomas Arildsen and Nancy Bertin and Folkert Bleichrodt and J\u00e9r\u00f4me Bobin and Anne Bol and Antoine Bonnefoy and Francesco Caltagirone and Valerio Cambareri and Cecile Chenot and V Crnojevi\u0107 and M Da\u0148kov\u00e1 and K\u00e9vin Degraux and Jens Eisert and JM Fadili and Marylou Gabri\u00e9 and Nicolas Gac and Daniele Giacobello and A Gonzalez and CA Gonzalez and A Gonz\u00e1lez and P-Y Gousenbourger and M Gr\u00e6sb\u00f8ll Christensen and R Gribonval and S Gu\u00e9rit and S Huang and P Irofti and L Jacques and US Kamilov and S Kitic\u0107 and M Kliesch and F Krzakala and JA Lee and W Liao and T Lindstr\u00f8m Jensen and A Manoel and H Mansour and A Mohammad-Djafari and A Moshtaghpour and F Ngol\u00e8 and B Pairet and M Pani\u0107 and G Peyr\u00e9 and A Pi\u017eurica and P Rajmic and M Roblin and I Roth and AK Sao and P Sharma and J-L Starck and EW Tramel and T van Waterschoot and D Vukobratovic and L Wang and B Wirth and G Wunder and H Zhang",
+      "venue": "arXiv preprint arXiv:1609.04167",
+      "year": 2016,
+      "citation_count": 0,
+      "url": "https://arxiv.org/abs/1609.04167",
+      "abstract": "The third edition of the \"international - Traveling Workshop on Interactions between Sparse models and Technology\" (iTWIST) took place in Aalborg, the 4th largest city in Denmark situated beautifully in the northern part of the country, from the 24th to 26th of August 2016. The workshop venue was at the Aalborg University campus. One implicit objective of this biennial workshop is to foster collaboration between international scientific teams by disseminating ideas through both specific oral/poster presentations and free discussions. For this third edition, iTWIST'16 gathered about 50 international participants and features 8 invited talks, 12 oral presentations, and 12 posters on the following themes, all related to the theory, application and generalization of the \"sparsity paradigm\": Sparsity-driven data sensing and processing (e.g., optics, computer vision, genomics, biomedical, digital communication, channel estimation, astronomy); Application of sparse models in non-convex/non-linear inverse problems (e.g., phase retrieval, blind deconvolution, self calibration); Approximate probabilistic inference for sparse problems; Sparse machine learning and inference; \"Blind\" inverse problems and dictionary learning; Optimization for sparse modelling; Information theory, geometry and randomness; Sparsity? What's next? (Discrete-valued signals; Union of low-dimensional spaces, Cosparsity, mixed/group norm, model-based, low-complexity models, ...); Matrix/manifold sensing/processing (graph, low-rank approximation, ...); Complexity/accuracy tradeoffs in numerical methods/optimization; Electronic/optical compressive sensors (hardware).",
+      "scholar_id": "jre2iwMAAAAJ:MLfJN-KU85MC"
+    }
+  ],
+  "total_found": 45,
+  "fetched_at": "2742"
+}

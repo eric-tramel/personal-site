@@ -217,3 +217,47 @@ else
 	echo "Your post content goes here." >> "$$FILE"; \
 	echo "$(GREEN)✓ Created: $$FILE$(NC)"
 endif
+
+# Python environment for publications management
+.PHONY: scholar-setup
+scholar-setup: ## Setup Python environment with uv for scholarly library
+	@echo "$(GREEN)Setting up Python environment for scholarly...$(NC)"
+	@if ! command -v uv >/dev/null 2>&1; then \
+		echo "$(RED)Error: uv not found. Please install uv first.$(NC)"; \
+		exit 1; \
+	fi
+	@echo "$(YELLOW)Creating virtual environment...$(NC)"
+	@uv venv .venv --python 3.11
+	@echo "$(YELLOW)Installing scholarly library...$(NC)"
+	@uv pip install scholarly
+	@echo "$(GREEN)✓ Python environment ready in .venv/$(NC)"
+	@echo "$(YELLOW)Use 'make scholar-sync' to fetch publications$(NC)"
+
+.PHONY: scholar-sync
+scholar-sync: ## Sync all publications from Google Scholar
+	@echo "$(GREEN)Syncing all publications from Google Scholar...$(NC)"
+	@if [ ! -d ".venv" ]; then \
+		echo "$(YELLOW)Setting up Python environment first...$(NC)"; \
+		$(MAKE) scholar-setup; \
+	fi
+	@mkdir -p scripts
+	@.venv/bin/python scripts/sync_publications.py
+	@echo "$(GREEN)✓ Publications sync complete$(NC)"
+
+.PHONY: scholar-update
+scholar-update: ## Update publications from Google Scholar (sync + compare + add new)
+	@echo "$(GREEN)Updating publications from Google Scholar...$(NC)"
+	@$(MAKE) scholar-sync
+	@echo "$(YELLOW)Comparing with existing publications...$(NC)"
+	@.venv/bin/python scripts/update_publications.py
+	@echo "$(GREEN)✓ Publications update complete$(NC)"
+
+.PHONY: scholar-test
+scholar-test: ## Test scholarly library connection
+	@echo "$(GREEN)Testing scholarly library...$(NC)"
+	@if [ ! -d ".venv" ]; then \
+		echo "$(YELLOW)Setting up Python environment first...$(NC)"; \
+		$(MAKE) scholar-setup; \
+	fi
+	@.venv/bin/python -c "from scholarly import scholarly; print('Scholarly library working!'); print('Testing with search...'); search = scholarly.search_pubs('machine learning'); pub = next(search); print(f'Found test publication: {pub.get(\"bib\", {}).get(\"title\", \"No title\")}')"
+	@echo "$(GREEN)✓ Scholarly library test passed$(NC)"

@@ -11,13 +11,14 @@ tag:
     - inverse problems
     - video 
     - block cs
-authors: "C. Chen, E. W. Tramel, & J. E. Fowler"
-in: "Asilomar Conf. on Signals, Systems, and Computers"
+authors: "Chen Chen and Eric W Tramel and James E Fowler"
+in: "Asilomar Conference on Signals, Systems, and Computers"
 year: 2011
+citations: 315
 image: "/assets/images/ctf2011.png"
 imageCaption: >-
     Barbara (detail) for subrate = 0.1. Top-row (left to right): BCS-SPL, MH-BCS-SPL, MS-BCS-SPL; bottom-row (left to right): MS-GPSR, MH-MS-BCS-SPL, TV.
-link: http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6190204&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6190204
+link: "https://ieeexplore.ieee.org/abstract/document/6190204/"
 linkpdf: http://www.utdallas.edu/~cxc123730/CTF2011.pdf
 linkcode: http://www.utdallas.edu/~cxc123730/MH-CS.zip
 abstract: >-
