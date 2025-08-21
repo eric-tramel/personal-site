@@ -1,0 +1,108 @@
+// Graph Paper Background Effect
+// Creates a subtle engineering paper feel with grid lines and film grain
+
+.graph-paper-background
+    position: relative
+    
+.graph-paper-background::before
+    content: ''
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: -2
+    pointer-events: none
+    // Graph paper grid using CSS gradients
+    background-image: linear-gradient(rgba($nord3, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba($nord3, 0.15) 1px, transparent 1px), linear-gradient(rgba($nord3, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba($nord3, 0.08) 1px, transparent 1px)
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px
+    background-position: 0 0, 0 0, 0 0, 0 0
+
+.graph-paper-background::after
+    content: ''
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: -1
+    pointer-events: none
+    // CSS-generated film grain using multiple radial gradients
+    background: linear-gradient(180deg, rgba($sitebackground, 0.75) 0%, rgba($sitebackground, 0.85) 100%)
+
+// For home page: keep graph paper but with lighter fade
+body:has(.home)::before
+    content: ''
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: -2
+    pointer-events: none
+    // Graph paper grid with lighter opacity for home page
+    background-image: linear-gradient(rgba($nord3, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba($nord3, 0.1) 1px, transparent 1px), linear-gradient(rgba($nord3, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba($nord3, 0.05) 1px, transparent 1px)
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px
+    background-position: 0 0, 0 0, 0 0, 0 0
+
+body:has(.home)::after
+    background: linear-gradient(180deg, rgba($sitebackground, 0.3) 0%, rgba($sitebackground, 0.3) 100%)
+
+// Refresh icon for clearing drawings - home page only
+.refresh-icon
+    position: fixed
+    bottom: 20px
+    left: 20px
+    width: 40px
+    height: 40px
+    z-index: 10
+    cursor: pointer
+    transition: all 0.3s ease
+    border-radius: 50%
+    background: rgba($sitebackground, 0.9)
+    display: flex
+    align-items: center
+    justify-content: center
+    box-shadow: 0 2px 8px rgba(26, 54, 93, 0.2)
+    
+    &:hover
+        transform: scale(1.1) rotate(45deg)
+        background: rgba($sitebackground, 1)
+        box-shadow: 0 4px 12px rgba(26, 54, 93, 0.3)
+        
+    &:active
+        transform: scale(0.95) rotate(180deg)
+        
+    // SVG refresh icon
+    svg
+        width: 20px
+        height: 20px
+        fill: #1a365d
+        transition: all 0.3s ease
+
+
+@keyframes grain-shift
+    0%
+        transform: translateX(0) translateY(0)
+    100%
+        transform: translateX(2px) translateY(1px)
+
+// Enhanced version with more pronounced effect for testing
+.graph-paper-background.enhanced::before
+    background-image: linear-gradient(rgba($nord3, 0.25) 1px, transparent 1px), linear-gradient(90deg, rgba($nord3, 0.25) 1px, transparent 1px), linear-gradient(rgba($nord3, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba($nord3, 0.12) 1px, transparent 1px)
+
+.graph-paper-background.enhanced::after
+    background-image: radial-gradient(circle at 20% 80%, rgba($nord1, 0.08) 1px, transparent 1px), radial-gradient(circle at 80% 20%, rgba($nord1, 0.08) 1px, transparent 1px), radial-gradient(circle at 40% 40%, rgba($nord1, 0.06) 1px, transparent 1px), radial-gradient(circle at 60% 60%, rgba($nord1, 0.06) 1px, transparent 1px), radial-gradient(circle at 90% 90%, rgba($nord1, 0.04) 1px, transparent 1px), radial-gradient(circle at 10% 10%, rgba($nord1, 0.04) 1px, transparent 1px)
+
+// Mobile optimization - reduce complexity on smaller screens
+@media #{$mobile}
+    .graph-paper-background::before
+        // Simplify grid on mobile for better performance
+        background-image: linear-gradient(rgba($nord3, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba($nord3, 0.1) 1px, transparent 1px)
+        background-size: 25px 25px, 25px 25px
+    
+    .graph-paper-background::after
+        // Reduce grain complexity on mobile
+        background-image: radial-gradient(circle at 25% 75%, rgba($nord1, 0.03) 1px, transparent 1px), radial-gradient(circle at 75% 25%, rgba($nord1, 0.03) 1px, transparent 1px)
+        background-size: 15px 15px, 20px 20px
+        animation: none // Disable animation on mobile to save battery

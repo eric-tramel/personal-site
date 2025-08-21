@@ -61,6 +61,51 @@ and lot of other options, like width, projects, pages, read-time, tags, related 
 
 Check the [FAQ](./FAQ.md) if you have any doubt or problem.
 
+## Build Commands
+
+This site includes a comprehensive Makefile for easy building and development. Here are the most common commands:
+
+### Quick Start
+```bash
+make install    # Install dependencies
+make build      # Build for production
+make serve      # Start development server
+```
+
+### Development Workflow
+```bash
+make dev        # Complete development setup: clean, install, build, serve
+make clean      # Clean build directory
+make watch      # Watch for changes and rebuild
+```
+
+### Available Commands
+Run `make help` to see all available commands including:
+- `make install` - Install Ruby dependencies via Bundler
+- `make build` - Build the site for production
+- `make build-dev` - Build the site for development
+- `make serve` - Start local development server
+- `make publish` - Build and publish to GitHub Pages
+- `make clean` - Clean the build directory
+- `make test` - Build and test the site
+- `make status` - Show git status and site info
+- `make version` - Show Jekyll and Ruby versions
+
+### Publishing to GitHub Pages
+```bash
+make preview-publish  # Preview what would be published
+make publish          # Build and publish (with confirmation)
+make publish-force    # Force publish without confirmation
+```
+
+### Docker Support
+If you prefer Docker, use the `-docker` suffix:
+```bash
+make install-docker  # Pull Jekyll Docker image
+make build-docker    # Build using Docker
+make serve-docker    # Serve using Docker
+```
+
 ---
 
 [MIT](http://kopplin.mit-license.org/) License © Sérgio Kopplin

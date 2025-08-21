@@ -55,17 +55,42 @@
 
         > .item
             display: inline-block
-            background-color: $nord11
-            border-radius: 2px
-            padding: 0px 0px 0px 0px
+            margin: 0 1rem
 
             > .link
                 text-decoration: none
                 font-family: $fontHeader
-                font-weight: 700
-                font-size: 1.5rem
-                padding: 20px 10px
-                color: $nord6
+                font-weight: 400
+                font-size: 1.4rem
+                padding: 0.5rem 0
+                color: #1a365d
+                letter-spacing: 0.08em
+                text-transform: uppercase
+                text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.4)
+                transform: rotate(-0.3deg)
+                transition: all 0.2s ease
+                position: relative
+                z-index: 2
+
+                &::after
+                    content: ''
+                    position: absolute
+                    bottom: -4px
+                    left: 0
+                    right: 0
+                    height: 3px
+                    background: #2c5282
+                    transform: scaleX(0) rotate(0.3deg)
+                    transition: transform 0.3s ease
+                    border-radius: 1px
+                
+                &:hover
+                    color: #2c5282
+                    transform: rotate(-0.1deg) scale(1.02)
+                    text-shadow: 0.5px 0.5px 0 #3182ce, 0 0 2px rgba(44, 82, 130, 0.5)
+                    
+                    &::after
+                        transform: scaleX(1) rotate(0.5deg)
 
     > .title-figure
         display: block
@@ -74,7 +99,7 @@
         margin-bottom: 20px
         margin-left: auto
         margin-right: auto
-        background-color: $nord11
+        background-color: #1a365d
         padding-left: 10px
         padding-right: 10px
         padding-top: 10px
@@ -85,7 +110,7 @@
             text-align: center
             max-height: 400px
             margin: 0px 0px
-            border: 1px solid $nord1
+            border: 1px solid #1a365d
             border-radius: 2px
 
     > .title-figure-caption
@@ -97,7 +122,7 @@
         margin-top: 20px
         margin-left: auto
         margin-right: auto
-        background-color: $nord11
+        background-color: #1a365d
         padding-left: 10px
         padding-right: 10px
         padding-top: 10px
@@ -109,7 +134,7 @@
             max-width: 300px
             max-height: 400px
             margin: 0px 0px
-            border: 1px solid $nord1
+            border: 1px solid #1a365d
             border-radius: 2px
             vertical-align: middle
 

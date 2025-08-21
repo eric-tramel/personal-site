@@ -1,32 +1,48 @@
 body, html
-    font-size: 62.5%
+    font-size: 68.75%
 
 body
-    line-height: 1
-    font: 16px $fontSans
+    line-height: 1.2
+    font-family: $fontSans
+    font-size: 1.6rem
     color: $alpha
     background-color: $sitebackground
 
 h1, h2, h3, h4
     font-family: $fontHeader
-    color: $beta
+    color: #1a365d
     -webkit-font-smoothing: antialiased
     text-rendering: optimizeLegibility
+    letter-spacing: 0.06em
+    text-transform: uppercase
+    // Dark navy felt pen effect
+    text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.3)
+    // Hand-drawn architectural style
+    position: relative
 
 h1
     font-size: 3rem
-    letter-spacing: -1px
-    color: $beta
-    font-weight: 700
+    font-weight: 500
+    transform: rotate(-0.2deg)
+    margin-bottom: 1.2em
 
 h2
     font-size: 2.2rem
+    font-weight: 400
+    transform: rotate(0.1deg)
+    margin-bottom: 1em
 
 h3
     font-size: 2rem
+    font-weight: 400
+    transform: rotate(-0.2deg)
+    margin-bottom: 0.8em
 
 h4
     font-size: 1.6rem
+    font-weight: 400
+    transform: rotate(0.1deg)
+    margin-bottom: 0.7em
 
 a
     color: $delta
@@ -34,7 +50,7 @@ a
     text-decoration: underline
 
 p
-    line-height: 1.25
+    line-height: 1.4
     color: $alpha
     font-weight: 300
     margin-bottom: 20px

@@ -15,7 +15,7 @@
 
             {% if site.about == true %}
                 <li class="item">
-                    <a class="link" href="/about">About</a>
+                    <a class="link" href="/about">Bio</a>
                 </li>
             {% endif %}
 
@@ -57,7 +57,7 @@
                 {% if site.about == true %}
                     {% if page.title != "About" %}
                         <li class="item">
-                            <a class="link" href="/about">About</a>
+                            <a class="link" href="/about">Bio</a>
                         </li>
                     {% endif %}
                 {% endif %}
@@ -78,6 +78,7 @@
             </div>
             
             <div class="nav-right">
+                <div class="nav-name">{{ site.name }}</div>
                 <div class="nav-social">
                     {% if site.twitter %}
                         <a class="link" data-title="X (Twitter)" href="http://twitter.com/{{ site.twitter }}" target="_blank">

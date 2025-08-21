@@ -32,7 +32,7 @@ layout: compress
     </style>
 
 </head>
-<body>
+<body class="graph-paper-background">
 
     <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
         {% if page.tag %}
@@ -54,6 +54,11 @@ layout: compress
     </div>
 
     {% include icons.html %}
+
+    <!-- Coffee Painter Script - Home Page Only -->
+    {% if page.title == "Home" %}
+        <script src="{{ site.url }}/assets/js/coffee-painter.js"></script>
+    {% endif %}
 
 </body>
 </html>

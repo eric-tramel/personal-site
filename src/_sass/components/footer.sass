@@ -1,27 +1,13 @@
 .footer-main
-    border-top: 1px solid $epsilon
-    border-radius: 2px
-    padding: 40px 0
-    margin: 40px 0 0
-    font-size: 1.3rem
+    position: fixed
+    bottom: 0
+    right: 0
+    padding: 20px
+    font-size: 1.2rem
     color: $gama
     font-weight: 300
-    text-align: center
-    position: relative
-
-    &:before
-        display: block
-        content: " "
-        width: 7px
-        height: 7px
-        border: $nord11 1px solid
-        position: absolute
-        top: -5px
-        left: 50%
-        margin-left: -5px
-        background: $nord11
-        box-shadow: $sitebackground 0 0 0 5px
-        border-radius: 10px
+    text-align: right
+    z-index: 50
 
     > .link
         display: inline
