@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const pubs = await getCollection("publications");
+
+const pubtypeOrder = ["talk", "preprint", "book", "chapter", "article", "patent", "conf"] as const;
+const pubtypeLabels: Record<string, string> = {
+  talk: "Talks",
+  preprint: "Preprints",
+  book: "Books",
+  chapter: "Book Chapters",
+  article: "Journal Articles",
+  patent: "Patents",
+  conf: "Conference Papers",
+};
+
+const grouped = new Map<string, typeof pubs>();
+for (const pt of pubtypeOrder) {
+  const items = pubs
+    .filter((p) => p.data.pubtype === pt)
+    .sort((a, b) => b.data.year - a.data.year);
+  if (items.length > 0) {
+    grouped.set(pt, items);
+  }
+}
+---
+
+<BaseLayout title="Publications">
+  <div class="publications">
+    <h1>Publications</h1>
+    {pubtypeOrder.map((pt) => {
+      const items = grouped.get(pt);
+      if (!items) return null;
+      return (
+        <section class="pub-section">
+          <h2>{pubtypeLabels[pt]}</h2>
+          <ul class="pub-list">
+            {items.map((pub) => (
+              <li class:list={["pub-item", { star: pub.data.star }]}>
+                {pub.data.star && <span class="star-marker">&#9733;</span>}
+                {pub.data.authors},
+                "<a href={`/publications/${pub.id}/`}>{pub.data.title}</a>,"
+                <em>{pub.data.in}</em>,
+                {pub.data.year}.
+              </li>
+            ))}
+          </ul>
+        </section>
+      );
+    })}
+  </div>
+</BaseLayout>
+
+<style>
+  .publications {
+    max-width: 810px;
+    margin: 0 auto;
+  }
+
+  .pub-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .pub-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .pub-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pub-item {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  .pub-item a {
+    color: var(--delta);
+    font-weight: 500;
+    text-decoration: underline;
+  }
+
+  .pub-item a:hover {
+    color: var(--hover);
+  }
+
+  .pub-item em {
+    font-style: italic;
+  }
+
+  .pub-item.star {
+    border-left: 3px solid var(--delta);
+    padding-left: 0.75rem;
+  }
+
+  .star-marker {
+    color: var(--delta);
+    margin-right: 0.25rem;
+  }
+</style>

@@ -1,0 +1,73 @@
+---
+interface Props {
+  currentSlug: string;
+  currentTags: string[];
+  allPosts: Array<{
+    id: string;
+    data: {
+      title: string;
+      tags: string[];
+    };
+  }>;
+}
+
+const { currentSlug, currentTags, allPosts } = Astro.props;
+
+const related = allPosts
+  .filter((post) => post.id !== currentSlug)
+  .map((post) => ({
+    ...post,
+    sharedTags: post.data.tags.filter((tag) => currentTags.includes(tag)).length,
+  }))
+  .filter((post) => post.sharedTags > 0)
+  .sort((a, b) => b.sharedTags - a.sharedTags)
+  .slice(0, 3);
+---
+
+{related.length > 0 && (
+  <aside class="related-posts">
+    <h3>Related Posts</h3>
+    <ul>
+      {related.map((post) => (
+        <li>
+          <a href={`/blog/${post.id}/`}>
+            {post.data.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </aside>
+)}
+
+<style>
+  .related-posts {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #c4bfb5;
+  }
+
+  .related-posts h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .related-posts ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .related-posts li {
+    margin-bottom: 0.5rem;
+  }
+
+  .related-posts a {
+    color: #1a365d;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+
+  .related-posts a:hover {
+    color: #2c5282;
+  }
+</style>

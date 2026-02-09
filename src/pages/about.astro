@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About">
+  <div class="about">
+    <h1>About</h1>
+
+    <h2>Academic Bio</h2>
+    <p>
+      I received my B.S. and Ph.D. degrees from Mississippi State University, both with distinctions, in 2007 and 2012, respectively. I conducted my dissertation work under the direction of Prof. James E. Fowler on the application of compressed sensing techniques to high-dimensional media, e.g. natural video, multiview image and video, light-field images, and hyperspectral imagery for geosciences. During my Ph.D. studies, I also worked as a research intern for Canon USA, Inc.'s research division in San Jose, CA, where my work lead to a patent for a novel lightfield acquisition system, for which I am listed as a co-inventor.
+    </p>
+    <p>
+      After finishing my graduate studies, in 2013 I started a postdoctoral research position at Ecole Normale Sup&eacute;rieure (ENS) in the SPHINX group of Prof. Florent Krzakala. During this fruitful post-doc, I focused my work mainly on the intersection of statistical physics and information problems, specifically, signal processing and machine learning. During my postdoc, I authored a number of works on this subject, including works presented at both ICML and NIPS, and edited a notable book on the same topic.
+    </p>
+    <p>
+      Following my academic work, I transitioned to industry roles focusing on applied machine learning and AI research. I've had the privilege of working across diverse organizations spanning technology companies, AI startups, and leading research institutions, contributing to advances in synthetic data generation, federated learning, clinical AI, and large language models.
+    </p>
+
+    <h2>Professional Experience</h2>
+    <div class="company-grid">
+      <div class="company-card">
+        <div class="company-name">NVIDIA</div>
+        <div class="job-title">Principal Research Scientist</div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">Gretel.ai</div>
+        <div class="job-title">Staff Research Scientist</div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">Unlearn.ai</div>
+        <div class="job-title">ML Lead</div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">Amazon Alexa</div>
+        <div class="job-title">Applied Scientist II</div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">Owkin</div>
+        <div class="job-title">Senior Research Scientist</div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">ENS</div>
+        <div class="job-title">Postdoctoral Researcher</div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">INRIA</div>
+        <div class="job-title">Postdoctoral Researcher</div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">ESPCI</div>
+        <div class="job-title">Visiting Researcher</div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">Canon</div>
+        <div class="job-title">Research Intern</div>
+      </div>
+      <div class="company-card">
+        <div class="company-name">MSU</div>
+        <div class="job-title">Ph.D. Student</div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    max-width: 810px;
+    margin: 0 auto;
+  }
+
+  .company-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .company-card {
+    padding: 1rem 1.25rem;
+    border: 1px solid #c4bfb5;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .company-name {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--delta);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .job-title {
+    font-size: 1.2rem;
+    color: var(--nord3);
+    margin-top: 0.25rem;
+    font-weight: 300;
+  }
+</style>

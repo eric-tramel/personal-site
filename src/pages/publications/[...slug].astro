@@ -1,0 +1,137 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const pubs = await getCollection("publications");
+  return pubs.map((pub) => ({
+    params: { slug: pub.id },
+    props: { pub },
+  }));
+}
+
+const { pub } = Astro.props;
+const { Content } = await render(pub);
+
+const links = [
+  { label: "LINK", url: pub.data.link },
+  { label: "PDF", url: pub.data.linkpdf },
+  { label: "CODE", url: pub.data.linkcode },
+  { label: "TALK", url: pub.data.linktalk },
+  { label: "SLIDES", url: pub.data.linkslides },
+  { label: "POSTER", url: pub.data.linkposter },
+].filter((l) => l.url);
+---
+
+<BaseLayout title={pub.data.title}>
+  <article class="publication">
+    <h1>{pub.data.title}</h1>
+    <p class="authors">{pub.data.authors}</p>
+
+    {links.length > 0 && (
+      <ul class="pub-links">
+        {links.map((l) => (
+          <li>
+            <a href={l.url}>[ {l.label} ]</a>
+          </li>
+        ))}
+      </ul>
+    )}
+
+    {pub.data.image && (
+      <figure class:list={["pub-figure", { "has-caption": !!pub.data.imageCaption }]}>
+        <img src={pub.data.image} alt={pub.data.title} />
+        {pub.data.imageCaption && (
+          <figcaption set:html={pub.data.imageCaption} />
+        )}
+      </figure>
+    )}
+
+    {pub.data.abstract && (
+      <section class="abstract">
+        <h2>Abstract</h2>
+        <p>{pub.data.abstract}</p>
+      </section>
+    )}
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    {pub.data.bibtex && (
+      <section class="bibtex">
+        <h2>BibTeX</h2>
+        <pre><code>{pub.data.bibtex}</code></pre>
+      </section>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  .publication {
+    max-width: 810px;
+    margin: 0 auto;
+  }
+
+  .authors {
+    font-size: 1.4rem;
+    color: var(--nord3);
+    margin-bottom: 1.5rem;
+  }
+
+  .pub-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .pub-links a {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--delta);
+    text-decoration: none;
+  }
+
+  .pub-links a:hover {
+    color: var(--hover);
+  }
+
+  .pub-figure {
+    margin: 1.5rem 0;
+  }
+
+  .pub-figure img {
+    max-width: 100%;
+    border-radius: 2px;
+  }
+
+  .pub-figure figcaption {
+    font-size: 1.2rem;
+    color: var(--nord3);
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .abstract {
+    margin: 2rem 0;
+  }
+
+  .abstract p {
+    line-height: 1.5;
+  }
+
+  .bibtex {
+    margin-top: 2rem;
+  }
+
+  .bibtex pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+</style>
