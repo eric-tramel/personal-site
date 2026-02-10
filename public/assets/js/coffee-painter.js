@@ -83,8 +83,15 @@ class MarkerDrawer {
                 -moz-user-select: none !important;
                 -ms-user-select: none !important;
             }
-            [data-home-page] .refresh-icon {
+            [data-home-page] a,
+            [data-home-page] button,
+            [data-home-page] .refresh-icon,
+            [data-home-page] [onclick] {
                 cursor: pointer !important;
+                user-select: auto !important;
+                -webkit-user-select: auto !important;
+                -moz-user-select: auto !important;
+                -ms-user-select: auto !important;
             }
         `;
         document.head.appendChild(style);
@@ -196,18 +203,37 @@ class MarkerDrawer {
 
         // Touch events for mobile
         document.addEventListener('touchstart', (e) => {
+            // Let interactive elements handle their own taps normally
+            if (this._isInteractiveTarget(e.target)) return;
             e.preventDefault();
             const touch = e.touches[0];
             this.startDrawing(touch.clientX, touch.clientY);
         }, { passive: false });
 
         document.addEventListener('touchmove', (e) => {
-            e.preventDefault();
+            // Only block scrolling while actively drawing
+            if (this.isDrawing) {
+                e.preventDefault();
+            }
             const touch = e.touches[0];
             this.handleMove(touch.clientX, touch.clientY);
         }, { passive: false });
 
         document.addEventListener('touchend', () => this.stopDrawing());
+    }
+
+    /**
+     * Check if a touch target (or any of its ancestors) is an interactive element
+     * that should receive normal browser tap handling.
+     */
+    _isInteractiveTarget(el) {
+        while (el && el !== document.body) {
+            if (el.tagName === 'A' || el.tagName === 'BUTTON') return true;
+            if (el.classList && el.classList.contains('refresh-icon')) return true;
+            if (el.hasAttribute && el.hasAttribute('onclick')) return true;
+            el = el.parentElement;
+        }
+        return false;
     }
 
     startDrawing(x, y) {
