@@ -8,6 +8,7 @@ BLOG_DIR = src/content/blog
 DEPLOY_DIR = deploy
 DIST_DIR = dist
 SITE_URL = https://eric-tramel.github.io
+NPM_CACHE_DIR = .npm-cache
 
 # Colors for pretty output
 GREEN = \033[0;32m
@@ -18,7 +19,7 @@ NC = \033[0m # No Color
 # Default target
 .DEFAULT_GOAL := help
 
-.PHONY: help dev build clean publish publish-force preview-publish post
+.PHONY: help install dev build clean publish publish-force preview-publish post
 
 # Help target - shows available commands
 help: ## Show this help message
@@ -26,6 +27,16 @@ help: ## Show this help message
 	@echo ""
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  $(YELLOW)%-20s$(NC) %s\n", $$1, $$2}'
 	@echo ""
+
+install: ## Install project dependencies (including Astro)
+	@echo "$(GREEN)Installing project dependencies...$(NC)"
+	@mkdir -p $(NPM_CACHE_DIR)
+	@if [ -f package-lock.json ]; then \
+		npm ci --cache $(NPM_CACHE_DIR); \
+	else \
+		npm install --cache $(NPM_CACHE_DIR); \
+	fi
+	@echo "$(GREEN)Done! Astro is available via 'npm run astro'.$(NC)"
 
 dev: ## Start local development server
 	@echo "$(GREEN)Starting development server...$(NC)"
