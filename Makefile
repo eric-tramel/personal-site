@@ -8,6 +8,8 @@ BLOG_DIR = src/content/blog
 DEPLOY_DIR = deploy
 DIST_DIR = dist
 SITE_URL = https://eric-tramel.github.io
+DEPLOY_REPO = git@github.com:eric-tramel/eric-tramel.github.io.git
+DEPLOY_BRANCH = master
 NPM_CACHE_DIR = .npm-cache
 
 # Colors for pretty output
@@ -19,7 +21,7 @@ NC = \033[0m # No Color
 # Default target
 .DEFAULT_GOAL := help
 
-.PHONY: help install dev build clean publish publish-force preview-publish post
+.PHONY: help install dev build clean init-deploy verify-deploy publish publish-force preview-publish post
 
 # Help target - shows available commands
 help: ## Show this help message
@@ -52,6 +54,40 @@ clean: ## Clean build artifacts
 	rm -rf $(DIST_DIR) .astro
 	@echo "$(GREEN)Done!$(NC)"
 
+init-deploy: ## Clone GitHub Pages repo into deploy/ (first-time setup)
+	@if [ -d $(DEPLOY_DIR)/.git ]; then \
+		echo "$(GREEN)$(DEPLOY_DIR)/ is already a git repo.$(NC)"; \
+		exit 0; \
+	fi
+	@if [ -d $(DEPLOY_DIR) ] && [ "$$(ls -A $(DEPLOY_DIR) 2>/dev/null)" != "" ]; then \
+		echo "$(RED)Error: $(DEPLOY_DIR)/ exists and is not an initialized git repo.$(NC)"; \
+		echo "$(YELLOW)Move or empty $(DEPLOY_DIR)/, then rerun: make init-deploy$(NC)"; \
+		exit 1; \
+	fi
+	@echo "$(GREEN)Cloning $(DEPLOY_REPO) ($(DEPLOY_BRANCH)) into $(DEPLOY_DIR)/...$(NC)"
+	@git clone --branch $(DEPLOY_BRANCH) $(DEPLOY_REPO) $(DEPLOY_DIR)
+	@echo "$(GREEN)Done!$(NC)"
+
+verify-deploy: ## Verify deploy/ points to the GitHub Pages repository
+	@if [ ! -d $(DEPLOY_DIR)/.git ]; then \
+		echo "$(RED)Error: $(DEPLOY_DIR)/ is not a git repo.$(NC)"; \
+		echo "$(YELLOW)Run: make init-deploy$(NC)"; \
+		exit 1; \
+	fi
+	@REMOTE_URL=$$(git -C $(DEPLOY_DIR) remote get-url origin 2>/dev/null || true); \
+	case "$$REMOTE_URL" in \
+		*eric-tramel.github.io.git) ;; \
+		*) \
+			echo "$(RED)Error: $(DEPLOY_DIR)/ origin is '$$REMOTE_URL'.$(NC)"; \
+			echo "$(YELLOW)Expected: $(DEPLOY_REPO)$(NC)"; \
+			exit 1 ;; \
+	esac
+	@CURRENT_BRANCH=$$(git -C $(DEPLOY_DIR) branch --show-current); \
+	if [ "$$CURRENT_BRANCH" != "$(DEPLOY_BRANCH)" ]; then \
+		echo "$(YELLOW)Checking out $(DEPLOY_BRANCH) in $(DEPLOY_DIR)/...$(NC)"; \
+		git -C $(DEPLOY_DIR) checkout $(DEPLOY_BRANCH); \
+	fi
+
 publish: ## Build and publish to GitHub Pages (with confirmation)
 	@echo "$(GREEN)Building and publishing to GitHub Pages...$(NC)"
 	@echo "$(YELLOW)This will build the site and push to $(SITE_URL)$(NC)"
@@ -62,7 +98,7 @@ publish-force: ## Build and publish without confirmation prompt
 	@echo "$(GREEN)Force publishing to GitHub Pages...$(NC)"
 	@$(MAKE) _publish
 
-_publish: build
+_publish: build verify-deploy
 	@echo "$(GREEN)Syncing build to deploy directory...$(NC)"
 	@rsync -av --delete --exclude='.git' $(DIST_DIR)/ $(DEPLOY_DIR)/
 	@cd $(DEPLOY_DIR) && \
@@ -78,6 +114,7 @@ _publish: build
 		fi
 
 preview-publish: ## Preview what would change in a publish (dry run)
+	@$(MAKE) verify-deploy
 	@echo "$(GREEN)Building site for publish preview...$(NC)"
 	@npm run build
 	@echo ""
