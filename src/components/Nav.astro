@@ -1,0 +1,206 @@
+---
+import SocialLinks from './SocialLinks.astro';
+
+interface Props {
+  isHome?: boolean;
+  currentPath?: string;
+}
+
+const { isHome = false, currentPath = '' } = Astro.props;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'Bio' },
+  { href: '/publications', label: 'Publications' },
+];
+
+// On home page, show only non-home links (centered)
+// On other pages, show all except current page
+const visibleLinks = isHome
+  ? navLinks.filter((l) => l.href !== '/')
+  : navLinks.filter((l) => l.href !== currentPath);
+---
+
+{isHome ? (
+  <nav class="nav-home">
+    {visibleLinks.map((link) => (
+      <a href={link.href} class="nav-link">
+        {link.label}
+      </a>
+    ))}
+  </nav>
+) : (
+  <nav class="nav-fixed">
+    <div class="nav-inner">
+      <div class="nav-left">
+        {visibleLinks.map((link) => (
+          <a href={link.href} class="nav-link">
+            {link.label}
+          </a>
+        ))}
+      </div>
+      <div class="nav-right">
+        <span class="nav-name">Eric W. Tramel</span>
+        <SocialLinks show={['twitter', 'github', 'scholar']} class="nav-social" />
+        <img
+          src="/assets/images/profile.jpg"
+          alt="Eric W. Tramel"
+          class="nav-photo"
+        />
+      </div>
+    </div>
+  </nav>
+)}
+
+<style>
+  /* ============================================================
+     Non-home: Fixed kraft paper nav
+     ============================================================ */
+  .nav-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: linear-gradient(180deg, #cec9c0 0%, #c9c4bb 40%, #c4bfb5 100%);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding: 0;
+  }
+
+  /* Paper texture overlay */
+  .nav-fixed::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    opacity: 0.25;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(80, 70, 60, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 50%, rgba(80, 70, 60, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+  }
+
+  .nav-inner {
+    max-width: 810px;
+    width: 96%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-name {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1a365d;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.3);
+  }
+
+  .nav-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  }
+
+  /* ============================================================
+     Home: Centered, not fixed
+     ============================================================ */
+  .nav-home {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0.5rem 0;
+  }
+
+  /* ============================================================
+     Nav links -- shared
+     ============================================================ */
+  .nav-link {
+    font-family: "Roboto Condensed", sans-serif;
+    color: #1a365d;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.3);
+    transform: rotate(-0.3deg);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background: #2c5282;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+
+  .nav-link:hover {
+    color: #2c5282;
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* ============================================================
+     Social links in nav -- override global a styles
+     ============================================================ */
+  :global(.nav-social) {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  :global(.nav-social a) {
+    color: #1a365d;
+    text-decoration: none;
+  }
+
+  :global(.nav-social a:hover) {
+    color: #2c5282;
+  }
+
+  /* Hide social + name on small screens */
+  @media (max-width: 640px) {
+    .nav-name {
+      display: none;
+    }
+    :global(.nav-social) {
+      display: none;
+    }
+  }
+</style>

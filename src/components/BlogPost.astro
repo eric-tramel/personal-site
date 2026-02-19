@@ -1,0 +1,104 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ReadTime from "./ReadTime.astro";
+import AuthorBlock from "./AuthorBlock.astro";
+
+interface Props {
+  title: string;
+  date: Date;
+  description?: string;
+  tags?: string[];
+  author?: string;
+  readingTime: number;
+  slug?: string;
+}
+
+const { title, date, description, tags = [], author = "erictramel", readingTime, slug } = Astro.props;
+
+const formattedDate = date.toLocaleDateString("en-US", {
+  month: "short",
+  day: "2-digit",
+  year: "numeric",
+});
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="post-article">
+    <header class="post-header">
+      <h1 class="post-title">{title}</h1>
+      <div class="post-meta">
+        <time datetime={date.toISOString()}>{formattedDate}</time>
+        <span>&middot;</span>
+        <ReadTime minutesRead={readingTime} />
+        {slug && (
+          <>
+            <span>&middot;</span>
+            <a href={`/blog/${slug}.md`} class="md-link" title="Raw markdown">.md</a>
+          </>
+        )}
+      </div>
+    </header>
+
+    <div class="prose">
+      <slot />
+    </div>
+
+    <AuthorBlock authorKey={author} />
+  </article>
+</BaseLayout>
+
+<style>
+  .post-article {
+    max-width: 810px;
+    margin: 0 auto;
+  }
+
+  .post-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .post-title {
+    font-family: "Roboto Condensed", sans-serif;
+    color: #1a365d;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-shadow: 0.5px 0.5px 0 #2c5282, 0 0 1px rgba(26, 54, 93, 0.3);
+    font-size: 3rem;
+    font-weight: 500;
+    transform: rotate(-0.2deg);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .post-meta {
+    color: #4c566a;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .md-link {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    color: #8e99a4;
+    text-decoration: none;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .md-link:hover {
+    color: #4c566a;
+  }
+
+  /* Extra space before content starts */
+  .post-header + .prose {
+    margin-top: 3rem;
+  }
+</style>

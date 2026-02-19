@@ -1,0 +1,60 @@
+---
+interface Props {
+  authorKey: string;
+}
+
+const authors: Record<string, { name: string; bio: string; picture: string }> = {
+  erictramel: {
+    name: "Eric W. Tramel, Ph.D.",
+    bio: "Principal Research Scientist, NVIDIA",
+    picture: "/assets/images/profile.jpg",
+  },
+};
+
+const { authorKey } = Astro.props;
+const author = authors[authorKey];
+---
+
+{author && (
+  <div class="author-block">
+    <img
+      src={author.picture}
+      alt={author.name}
+      class="author-photo"
+    />
+    <div>
+      <p class="author-name">{author.name}</p>
+      <p class="author-bio">{author.bio}</p>
+    </div>
+  </div>
+)}
+
+<style>
+  .author-block {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #c4bfb5;
+  }
+
+  .author-photo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .author-name {
+    font-weight: 500;
+    color: #2e3440;
+    margin-bottom: 0;
+  }
+
+  .author-bio {
+    font-size: 14px;
+    color: #4c566a;
+    margin-bottom: 0;
+  }
+</style>

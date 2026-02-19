@@ -1,0 +1,9 @@
+---
+interface Props {
+  minutesRead: number;
+}
+
+const { minutesRead } = Astro.props;
+---
+
+<span style="color: #4c566a; font-size: 14px; font-weight: 300;">{Math.ceil(minutesRead)} min read</span>

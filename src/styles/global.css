@@ -1,0 +1,337 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ============================================================
+   Design System -- Colors & Tokens
+   ============================================================ */
+:root {
+  /* Page palette */
+  --nord0: #2e3440;   /* Polar Night base -- body text */
+  --nord3: #4c566a;   /* muted text, dates */
+  --nord5: #d9d5cd;   /* site background -- warm parchment, dimmed */
+  --delta: #1a365d;   /* links, headings -- dark navy */
+  --hover: #2c5282;   /* hover accent -- lighter navy */
+
+  /* Code block surface */
+  --astro-code-color-background: #ccc8c0;
+  --astro-code-color-text: #2e3440;
+
+  /* Syntax tokens -- WCAG AA (>=4.5:1) contrast against #ccc8c0 (L=0.58)
+     Darkened from originals while preserving hue. Ratios verified via
+     WCAG relative-luminance formula: L = 0.2126R + 0.7152G + 0.0722B */
+  --astro-code-token-keyword: #3d5676;               /* blue, 4.51:1 (was #5e81ac) */
+  --astro-code-token-string: #3a5c41;                /* green, 4.52:1 (was #4d7a56) */
+  --astro-code-token-string-expression: #3a5c41;     /* green, 4.52:1 (was #4d7a56) */
+  --astro-code-token-function: #225c67;              /* teal, 4.51:1 (was #2e7d8c) */
+  --astro-code-token-constant: #634a78;              /* purple, 4.53:1 (was #8b6ea5) */
+  --astro-code-token-parameter: #2e3440;             /* Same as text, 7.49:1 */
+  --astro-code-token-comment: #4e536b;               /* blue-gray, 4.54:1 (was #6b7394) */
+  --astro-code-token-punctuation: #4c566a;           /* Nord3 */
+  --astro-code-token-link: #3d5676;                  /* Same as keyword, 4.51:1 */
+}
+
+/* ============================================================
+   Base HTML / Body
+   ============================================================ */
+html {
+  font-size: 68.75%;  /* 11px base so 1.6rem = ~17.6px body text */
+}
+
+body {
+  background-color: var(--nord5);
+  color: var(--nord0);
+  font-family: "Literata", Georgia, serif;
+  font-weight: 275;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   Typography -- Headings
+   ============================================================ */
+h1, h2, h3, h4 {
+  font-family: "Roboto Condensed", sans-serif;
+  color: var(--delta);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-shadow: 0.5px 0.5px 0 var(--hover), 0 0 1px rgba(26, 54, 93, 0.3);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  transform: rotate(-0.2deg);
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 400;
+  transform: rotate(0.1deg);
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  transform: rotate(-0.2deg);
+}
+
+h4 {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+/* ============================================================
+   Typography -- Paragraphs, Links, Strong, Lists
+   ============================================================ */
+p {
+  line-height: 1.4;
+  font-weight: 275;
+  margin-bottom: 20px;
+  color: var(--nord0);
+}
+
+a {
+  color: #2d4a6f;
+  font-weight: inherit;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #3d608f;
+}
+
+strong {
+  font-weight: 500;
+  color: #000;
+}
+
+ul, ol {
+  line-height: 2.4rem;
+  font-weight: 275;
+}
+
+/* ============================================================
+   Code Blocks -- light surface, one step darker than page
+   ============================================================ */
+pre {
+  background-color: var(--astro-code-color-background, #ccc8c0) !important;
+  border: 1px solid #c2beb6;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  box-shadow: none;
+}
+
+pre > code {
+  font-family: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: var(--astro-code-color-text, #2e3440) !important;
+}
+
+/* Inline code -- monospace, no background badge */
+:not(pre) > code {
+  background: none !important;
+  color: #2e3440 !important;
+  font-weight: 400 !important;
+  font-size: 0.8em !important;
+  font-family: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* ============================================================
+   Prose overrides (Tailwind Typography)
+   ============================================================ */
+.prose {
+  --tw-prose-body: var(--nord0);
+  --tw-prose-headings: var(--delta);
+  --tw-prose-links: var(--delta);
+  --tw-prose-bold: #000;
+  --tw-prose-code: #2e3440;
+  --tw-prose-pre-bg: #ccc8c0;
+  --tw-prose-pre-code: #2e3440;
+  color: var(--nord0);
+  font-family: "Literata", Georgia, serif;
+  font-weight: 275;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  max-width: none;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  font-family: "Roboto Condensed", sans-serif;
+  color: var(--delta);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-shadow: 0.5px 0.5px 0 var(--hover), 0 0 1px rgba(26, 54, 93, 0.3);
+}
+
+.prose h1 { font-size: 3rem; font-weight: 500; transform: rotate(-0.2deg); }
+.prose h2 { font-size: 2.2rem; font-weight: 400; transform: rotate(0.1deg); margin-top: 3rem; margin-bottom: 1rem; }
+.prose h3 { font-size: 2rem; font-weight: 400; transform: rotate(-0.2deg); }
+
+.prose p {
+  line-height: 1.4;
+  font-weight: 275;
+  margin-bottom: 20px;
+  color: var(--nord0);
+}
+
+.prose a {
+  color: #2d4a6f;
+  font-weight: inherit;
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: #3d608f;
+}
+
+.prose strong {
+  font-weight: 500;
+  color: #000;
+}
+
+.prose ul, .prose ol {
+  line-height: 2.4rem;
+  font-weight: 275;
+  padding-left: 1.5em !important;
+}
+
+.prose ul {
+  list-style: none !important;
+}
+
+.prose ul > li {
+  position: relative;
+}
+
+.prose ul > li::before {
+  content: "›";
+  position: absolute;
+  left: -1.1em;
+  top: 0;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  color: var(--nord3);
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+/* Prose code blocks */
+.prose pre {
+  background-color: #ccc8c0 !important;
+  border: 1px solid #c2beb6 !important;
+  color: #2e3440 !important;
+}
+
+.prose code {
+  background: none;
+  color: #2e3440;
+  font-weight: 400;
+  font-size: 0.8em;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+/* Remove the prose backtick decorations */
+.prose code::before,
+.prose code::after {
+  display: none !important;
+}
+
+.prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))::before,
+.prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))::after {
+  content: "" !important;
+}
+
+.prose img {
+  border-radius: 2px;
+}
+
+/* Tables -- booktabs style */
+.prose table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0;
+}
+
+.prose thead {
+  border-top: 2px solid var(--nord0);
+  border-bottom: 1px solid var(--nord0);
+}
+
+.prose thead th {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.04em;
+  padding: 0.6em 0.75em;
+  text-align: left;
+  border: none !important;
+}
+
+.prose tbody tr {
+  border: none !important;
+}
+
+.prose tbody td {
+  padding: 0.45em 0.75em;
+  border: none !important;
+}
+
+.prose tbody {
+  border-bottom: 2px solid var(--nord0) !important;
+}
+
+.prose table th,
+.prose table td {
+  background: none !important;
+}
+
+/* Captions -- naturalist style */
+.prose caption,
+.prose figcaption {
+  font-family: "Lora", Georgia, serif;
+  font-style: italic;
+  font-size: 0.85em;
+  line-height: 1.4;
+  color: var(--nord3);
+  text-align: right;
+  padding-top: 0.5em;
+  caption-side: bottom;
+}
+
+.prose blockquote {
+  font-family: "Lora", Georgia, serif;
+  font-style: italic;
+  font-size: 1.05em;
+  line-height: 1.55;
+  color: var(--nord0);
+  border-left: 3px solid var(--delta);
+  padding: 0.1em 0 0.1em 1.5em !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.prose blockquote p {
+  color: var(--nord0);
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 400;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
