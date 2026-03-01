@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 const pubtypeOrder = ["talk", "preprint", "book", "chapter", "article", "patent", "conf"] as const;
 const pubtypeLabels: Record<string, string> = {
   talk: "Talks",
-  preprint: "Preprints",
+  preprint: "Tech Reports & Preprints",
   book: "Books",
   chapter: "Book Chapters",
   article: "Journal Articles",
