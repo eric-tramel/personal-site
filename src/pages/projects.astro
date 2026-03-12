@@ -1,0 +1,287 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const projects = [
+  {
+    name: "moraine",
+    org: "eric-tramel",
+    href: "https://github.com/eric-tramel/moraine",
+    image: "/assets/images/projects/moraine.png",
+    description:
+      "Realtime trace database and BM25 search MCP that turns Claude Code and Codex sessions into a searchable long-term memory layer.",
+    tags: ["Realtime ingest", "BM25 search", "Agent memory"],
+  },
+  {
+    name: "slop-guard",
+    org: "eric-tramel",
+    href: "https://eric-tramel.github.io/slop-guard/",
+    image: "/assets/images/projects/slop-guard.png",
+    description:
+      "Rule-based prose linter that scores formulaic AI writing patterns without an LLM judge, then returns concrete violations and revision advice.",
+    tags: ["Prose linting", "CLI + MCP", "Rule engine"],
+  },
+  {
+    name: "zoty",
+    org: "eric-tramel",
+    href: "https://github.com/eric-tramel/zoty",
+    image: "/assets/images/projects/zoty.png",
+    description:
+      "Lightweight Zotero MCP server that lets agents search local libraries, browse collections, inspect items, and ingest papers by DOI or arXiv ID.",
+    tags: ["Zotero", "Research workflow", "Paper ingestion"],
+  },
+  {
+    name: "plait",
+    org: "eric-tramel",
+    href: "https://github.com/eric-tramel/plait",
+    image: "/assets/images/projects/plait.png",
+    description:
+      "PyTorch-inspired framework for composing, tracing, and optimizing LLM inference pipelines with automatic concurrency and resource management.",
+    tags: ["LLM pipelines", "Execution DAGs", "Optimization"],
+  },
+  {
+    name: "synthetic-pretraining-tracker",
+    org: "eric-tramel",
+    href: "https://eric-tramel.github.io/synthetic-pretraining-tracker/",
+    image: "/assets/images/projects/synthetic-pretraining-tracker.png",
+    description:
+      "Static, cited tracker of synthetic-token usage in open-weight LLM pretraining, with hoverable quotes tied directly back to technical reports and model cards.",
+    tags: ["LLM tracking", "Cited data", "Static site"],
+  },
+  {
+    name: "DataDesigner",
+    org: "NVIDIA NeMo",
+    href: "https://github.com/NVIDIA-NeMo/DataDesigner",
+    image: "/assets/images/projects/datadesigner.png",
+    description:
+      "General library for generating high-quality synthetic datasets from scratch or seed data, with validators, samplers, and LLM-backed generation workflows.",
+    tags: ["Synthetic data", "Validation", "Seed or scratch"],
+  },
+] as const;
+---
+
+<BaseLayout
+  title="Projects"
+  description="Open-source projects by Eric W. Tramel spanning agent tooling, research workflows, and synthetic data systems."
+>
+  <div class="projects-page">
+    <header class="projects-header">
+      <h1>Projects</h1>
+    </header>
+
+    <div class="project-grid">
+      {projects.map((project) => (
+        <a
+          class="project-card"
+          href={project.href}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`Open ${project.name} on GitHub`}
+        >
+          <div class="project-preview">
+            <img
+              src={project.image}
+              alt=""
+              class="project-preview-image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="project-body">
+            <div class="project-meta">
+              <p class="project-org">{project.org}</p>
+              <h2>{project.name}</h2>
+            </div>
+            <p class="project-description">{project.description}</p>
+            <ul class="project-tags" aria-label={`${project.name} tags`}>
+              {project.tags.map((tag) => (
+                <li>{tag}</li>
+              ))}
+            </ul>
+            <span class="project-link">Open repository</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .projects-page {
+    width: min(1120px, calc(100vw - 2.4rem));
+    max-width: none;
+    overflow-x: clip;
+    margin: 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .projects-header {
+    text-align: center;
+    margin-bottom: 2.8rem;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid rgba(107, 102, 92, 0.32);
+    border-radius: 18px;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.1)),
+      #ddd8cf;
+    box-shadow: 0 10px 24px rgba(64, 53, 39, 0.07);
+    transition:
+      box-shadow 0.24s ease,
+      border-color 0.24s ease;
+  }
+
+  .project-card:hover {
+    box-shadow: 0 16px 34px rgba(39, 31, 21, 0.11);
+    border-color: rgba(44, 82, 130, 0.34);
+  }
+
+  .project-preview {
+    position: relative;
+    min-height: 18.5rem;
+    overflow: hidden;
+    background: #d7d2ca;
+    border-bottom: 1px solid rgba(26, 54, 93, 0.08);
+  }
+
+  .project-preview::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.12);
+    opacity: 0;
+    transition: opacity 0.24s ease;
+  }
+
+  .project-preview::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 24%, transparent 76%, rgba(26, 54, 93, 0.08)),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05), transparent 14%, transparent 86%, rgba(26, 54, 93, 0.04));
+  }
+
+  .project-preview-image {
+    width: 100%;
+    height: 100%;
+    min-height: 18.5rem;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(0.92) contrast(0.96);
+  }
+
+  .project-card:hover .project-preview::before {
+    opacity: 1;
+  }
+
+  .project-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.5rem 1.7rem 1.7rem;
+  }
+
+  .project-meta {
+    margin-bottom: 0.85rem;
+  }
+
+  .project-org {
+    margin: 0 0 0.45rem;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.15rem;
+    color: var(--nord3);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .project-meta h2 {
+    margin: 0;
+    font-size: 2.2rem;
+  }
+
+  .project-description {
+    color: var(--nord0);
+    margin-bottom: 1.2rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.35rem;
+  }
+
+  .project-tags li {
+    padding: 0.3rem 0.72rem;
+    border-radius: 999px;
+    border: 1px solid rgba(44, 82, 130, 0.16);
+    background: rgba(44, 82, 130, 0.06);
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.05em;
+    color: var(--delta);
+  }
+
+  .project-link {
+    margin-top: auto;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--delta);
+  }
+
+  .project-card:hover .project-link {
+    color: var(--hover);
+  }
+
+  @media (max-width: 720px) {
+    .projects-page {
+      width: min(100%, calc(100vw - 1.8rem));
+      transform: none;
+      margin-left: auto;
+    }
+
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-preview {
+      min-height: 16rem;
+    }
+
+    .project-preview-image {
+      min-height: 16rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-card {
+      transition: none;
+    }
+
+    .project-preview::before {
+      transition: none;
+    }
+  }
+</style>
